@@ -1,0 +1,75 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<View>
+			<ScrollView layout="vertical">
+				<View class="pagetitleview">
+					<Label class="lobster pagetitle">Tilmeldte opgaver</Label>
+				</View>
+				<View layout="vertical">
+					<View class="tilmeldt_opg" onClick="toOpgavedetaljer">
+						<View class="profile_image">
+							<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
+						</View>
+						<View class="name_description">
+							<Label class="name">Jens Larsen</Label>
+							<Label left="5" top="10">Flytning</Label>
+						</View>
+						<View class="date">
+							<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
+							<Label right="20" top="10">d.12.07.17</Label>
+						</View>
+
+					</View>
+					<View class="tilmeldt_opg" top="-1" onClick="toOpgavedetaljer">
+						<View class="profile_image">
+							<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
+						</View>
+						<View class="name_description">
+							<Label class="name">Jens Larsen</Label>
+							<Label left="5" top="10">Flytning</Label>
+						</View>
+						<View class="date">
+							<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
+							<Label right="20" top="10">d.12.07.17</Label>
+						</View>
+
+					</View>
+					<View class="tilmeldt_opg" top="-1" onClick="toOpgavedetaljer">
+						<View class="profile_image">
+							<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
+						</View>
+						<View class="name_description">
+							<Label class="name">Jens Larsen</Label>
+							<Label left="5" top="10">Flytning</Label>
+						</View>
+						<View class="date">
+							<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
+							<Label right="20" top="10">d.12.07.17</Label>
+						</View>
+
+					</View>
+
+				</View>
+
+			</ScrollView>
+			<View id="bottom_nav">
+				<View class="tab" onClick="toOpdag">
+					<ImageView class="tab_img" image="/images/opdag.png" />
+					<Label class="tab_lbl" text="Opdag" />
+				</View>
+				<View class="active tab" onClick="toTilmeldte">
+					<ImageView class="tab_img" image="/images/tilmeldte_opgaver_a.png" />
+					<Label class="active_lbl" text="Tilmeldte opgaver" />
+				</View>
+				<View class="tab" onClick="toProfil">
+					<ImageView class="tab_img" image="/images/profil.png" />
+					<Label class="tab_lbl" text="Profil" />
+				</View>
+				<View class="tab" onClick="toIndstillinger">
+					<ImageView class="tab_img" image="/images/indstillinger.png" />
+					<Label class="tab_lbl" text="Indstillinger" />
+				</View>
+			</View>
+		</View>
+	</Window>
+</Alloy>

@@ -1,0 +1,105 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<View>
+		<ScrollView layout="vertical">
+		<View class="pagetitleview">
+			<Label class="lobster pagetitle">Profil</Label>
+		</View>
+		<View layout="vertical">
+			<View class="profile" layout="horizontal">
+				<View class="spacer-view"></View>
+				<View class="profile-img">
+					<ImageView image="/images/profile_pic1.png" width="145dp" height="145dp" id="profile_picture"></ImageView>
+				</View>
+				<View class="profile-info" layout="vertical">
+					<Label class="profile-text">Karl Holger</Label>
+					<Label class="profile-text">28 år</Label>
+					<Label class="profile-text">Odense C</Label>
+				</View>
+			</View>
+			<View class="pagetitleview">
+				<Label class="lobster pagetitle">Interesser</Label>
+			</View>
+			<View layout="horizontal">
+				<View class="spacer-view"></View>
+				<View layout="vertical" class="interests">
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Musik</Label>
+					</View>
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Dyr</Label>
+					</View>
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Madlavning</Label>
+					</View>
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Kunst</Label>
+					</View>
+				</View>
+				<View layout="vertical" class="interests">
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Håndarbejde</Label>
+					</View>
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Havearbejde</Label>
+					</View>
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Mekanik</Label>
+					</View>
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Sport</Label>
+					</View>
+				</View>
+				<View layout="vertical" class="interests">
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Underholdning</Label>
+					</View>
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Socialt arbejde</Label>
+					</View>
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Natur</Label>
+					</View>
+					<View layout="horizontal" class="interests-fields">
+						<Switch class="checkbox"></Switch>
+						<Label class="interests-labels">Mode</Label>
+					</View>
+				</View>
+				<View class="spacer-view"></View>
+			</View>
+		</View>
+		
+		</ScrollView>
+		
+			<View id="bottom_nav">
+				<View class="tab" onClick="toOpdag">
+					<ImageView class="tab_img" image="/images/opdag.png" />
+					<Label class="tab_lbl" text="Opdag" />	
+				</View>
+				<View class="tab" onClick="toTilmeldte">
+					<ImageView class="tab_img" image="/images/tilmeldte_opgaver.png" />
+					<Label class="tab_lbl" text="Tilmeldte opgaver" />	
+				</View>
+				<View class="active tab" onClick="toProfil">
+					<ImageView class="tab_img" image="/images/profil_a.png" />
+					<Label class="active_lbl" text="Profil" />
+				</View>
+				<View class="tab" onClick="toIndstillinger">
+					<ImageView class="tab_img" image="/images/indstillinger.png" /> 
+					<Label class="tab_lbl" text="Indstillinger" />	
+				</View>
+			</View>
+		</View>
+	</Window>
+</Alloy>

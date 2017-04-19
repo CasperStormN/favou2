@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<View class="pagetitleview">
+			<Label class="lobster pagetitle">Gruppechat</Label>
+		</View>
+	</Window>
+</Alloy>

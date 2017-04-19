@@ -1,0 +1,79 @@
+
+".add_btn":  {
+	right: "20",
+	font: {
+		fontSize: "50dp",
+		fontWeight: "bold",
+	},
+	color: "#59d3ca",
+} 
+
+".tilmeldt_opg": {
+	height: "80dp",
+	width: "100%",
+	borderColor: "#59d3ca",
+	layout: "horizontal",
+}
+
+".profile_image": {
+	width: "22%",
+	layout: "vertical",
+}
+
+".profile_picture" : {
+    borderRadius: "75",
+    height: "60",
+    width: "60",
+    top: "10",
+}
+
+".name_description": {
+	layout: "vertical",
+	width: "39%",
+}
+
+".name": {
+	left: "5",
+	top: "10",
+	color: "#59d3ca",
+	font: {
+		fontSize: "18",
+	}
+}
+
+".date": {
+	layout: "vertical",
+	width: "38%",
+}
+
+
+
+
+".nav": {
+	height:"45dp",
+	width:"100%",
+}
+
+".nav_tab": {
+	width:"33.3%",
+	backgroundColor:"white",
+	border:"1dp",
+	borderColor:"192b39"
+}
+
+".nav_tab_lbl": {
+	color:"#192b39",
+	font: {
+		fontSize:"18dp",
+		fontFamily:"Lobster_1_4"
+	}
+}
+
+".active_nav_tab": {
+	backgroundColor: "#59d3ca"
+}
+
+".map": {
+	width:"100%",
+	height:Titanium.UI.SIZE
+}

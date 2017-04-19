@@ -1,0 +1,87 @@
+
+".container" : {
+  
+}
+
+
+".h2": {
+	color: "#59d3ca",
+	font: {
+		fontSize: "24dp"
+	},
+	bottom: "20dp",
+}
+
+".opgavetitel" : {
+	color: "#59d3ca",
+	font: {
+		fontSize: "22dp",
+	}
+}
+
+".opgavedato" : {
+	color: "#fff",
+	font: {
+		fontSize: "20dp",
+	},
+}
+
+"#profile_picture" : {
+	width: "150",
+    height: "150",
+    borderRadius: "75",
+    top: "15dp",
+}
+
+".user_name" : {
+	color: "#fff",
+	font: {
+		fontSize: "20dp",
+	},
+	height: "50dp",
+}
+
+"#gruppechat_btn" : {
+	backgroundColor: "#59D3CA",
+	width: "150dp",
+	height: "40dp",
+	bottom: "12dp",
+	borderRadius: "10", 
+}
+".details" : {
+	layout: "vertical", 
+	width: "90%",
+	left: "20dp",
+	height: "200dp",
+	bottom: "15dp",
+}
+
+".detalje_h2" : {
+	color: "#59d3ca",
+	right: "4dp",
+}
+
+".opgave_detaljer": {
+	layout: "horizontal",
+	height: "19dp",
+}
+
+".opgave_beskrivelse": {
+	layout: "horizontal",
+	height: "700dp",
+}
+
+
+".deltagere" : {
+	layout: "horizontal",
+	left: "30dp",
+	height: "300dp",
+} 
+
+"#deltager_pic" : {
+	left: "15dp",
+	bottom: "10dp",
+	width: "80",
+    height: "80",
+    borderRadius: "40",
+} 

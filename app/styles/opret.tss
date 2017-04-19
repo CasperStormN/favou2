@@ -1,0 +1,95 @@
+".back_btn": {
+	width:"12dp",
+	height:"20dp",
+	left:"20dp"
+}
+
+".input_field": {
+	width:"80%",
+	height:"50dp",
+	top:"25dp",
+	color:"black",
+	backgroundColor:"white",
+	border: "1dp",
+	borderColor:"#59d3ca",
+	font: {
+		fontSize:"14dp",
+		fontFamily:"Roboto-Light"
+	}
+}
+
+".time_picker_view": {
+	width:"80%",
+	height:"50dp",
+	top:"25dp",
+	backgroundColor:"#192935"
+}
+
+".time_input_field": {
+	width:"45%",
+	height:"100%",
+	color:"black",
+	backgroundColor:"white",
+	border: "1dp",
+	borderColor:"#59d3ca",
+	inputType: Titanium.UI.INPUT_TYPE_CLASS_NUMBER,
+	font: {
+		fontSize:"14dp",
+		fontFamily:"Roboto-Light"
+	}
+}
+
+".textarea_field": {
+	width:"80%",
+	height:"150dp",
+	top:"25dp",
+	color:"black",
+	backgroundColor:"white",
+	border: "1dp",
+	borderColor:"#59d3ca",
+	font: {
+		fontSize:"14dp",
+		fontFamily:"Roboto-Light"
+	}
+}
+
+".input_label": {
+	color:"black",
+	left:"5dp",
+	font: {
+		fontSize: "14dp",
+		fontFamily:"Roboto-Light"
+	}
+}
+
+".opret_btn" : {
+	backgroundColor: "#59D3CA",
+	width: "150dp",
+	height: "40dp",
+	top:"25dp",
+	bottom:"25dp",
+	borderRadius: "10", 
+}
+
+".spacer-view": {
+	width:"9%"
+}
+
+".interests": {
+	width:"28%",
+}
+
+".interests-fields": {
+	height:"30dp",
+}
+
+".interests-labels": {
+	color:"white",
+	font: {
+		fontSize:"10dp"
+	}
+}
+
+".checkbox" : {
+    style:Ti.UI.Android.SWITCH_STYLE_CHECKBOX
+}

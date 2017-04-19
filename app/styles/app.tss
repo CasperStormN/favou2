@@ -1,0 +1,97 @@
+/*
+
+This is your global styles file. Selectors and rules you define
+here will be applied throughout your app. However, these rules
+have the lowest priority of any style settings.
+
+For more information, see the "Style Priorities" section of
+http://docs.appcelerator.com/platform/latest/#!/guide/Alloy_Styles_and_Themes
+
+For example, the following would apply to all labels, windows,
+and text fields (depending on platform) in your app unless you
+overrode the settings with other TSS, XML, or JS settings:
+
+'Label[platform=android,windows]': {
+	color: '#000' // all platforms except Android and Windows default to black
+}
+
+'Window': {
+	backgroundColor: '#fff' // white background instead of default transparent or black
+}
+
+'TextField[platform=android]': {
+	height: Ti.UI.SIZE
+}
+
+*/
+
+".lobster": {
+	font: {
+		fontFamily: 'Lobster_1_4'
+	}
+}
+
+".pagetitle": {
+	color: "#59d3ca",
+	font: {
+		fontSize: "24dp"
+	}
+}
+
+".container": {
+	backgroundColor: "#192935",
+}
+
+"Label": {
+	color: "white",
+		font: {
+		fontFamily: 'Roboto-Light',
+	}
+}
+
+".pagetitleview": {
+	width:"100%",
+	height:"75dp"
+}
+
+/* BOTTOM NAV */
+"#bottom_nav" : {
+	layout: "horizontal",
+	height: "67dp",
+	bottom: "0",
+	borderColor: "#d2d2d2",
+}
+
+".tab": {
+	width: "25%",
+	textAlign: "center",
+	backgroundColor: "#fff",
+	layout: "vertical",
+	borderColor: "#d2d2d2",
+} 
+
+".active" : {
+	backgroundColor: "#182835",
+}
+
+".active_lbl": {
+	color: "#fff",
+	font: {
+		fontSize: "10"
+	}
+}
+
+".tab_img": {
+	top: "6%",
+	height: "40dp",
+	bottom: "5%",
+}
+
+".tab_lbl": {
+	color: "#000",
+	font: {
+		fontSize: "10"
+	}
+}
+
+

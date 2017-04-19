@@ -1,0 +1,32 @@
+/*".inputbg": {
+	width: "85%",
+	height: "260dp",
+	backgroundColor: "white",
+	borderRadius:"14dp",
+	borderColor: "#d2d2d2",
+}*/
+
+".inputfield": {
+	width:"80%",
+	borderWidth:"1dp",
+	borderColor:"#59d3ca",
+	height:"40dp",
+	top:"20dp",
+	backgroundColor: "#fff",
+} 
+
+".inputlabel": {
+	left:"10dp",
+	color:"black",
+	font: {
+		fontSize: "12dp"
+	},
+}
+
+".afstand": {
+	right:"5dp",
+	color:"black",
+	font: {
+		fontSize: "16dp"
+	}
+}

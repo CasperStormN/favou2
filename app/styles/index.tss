@@ -1,0 +1,24 @@
+".logo": {
+	top: "100dp",
+	width: "80%"
+}
+
+".fb_login_btn": {
+	top: "60dp",
+	width: "60%"
+}
+
+".loginpage_info": {
+	top: "40dp",
+	width:"60%",
+	
+}
+
+".loginpage_infolabel": {
+	top: "0",
+	color: "#59d3ca",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontSize: "17dp"
+	}
+}

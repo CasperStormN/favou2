@@ -1,0 +1,47 @@
+
+".container" : {
+  
+}
+
+
+".tilmeldt_opg": {
+	height: "80dp",
+	width: "100%",
+	borderColor: "#59d3ca",
+	layout: "horizontal",
+}
+
+".profile_image": {
+	width: "22%",
+	layout: "vertical",
+}
+
+".profile_picture" : {
+    borderRadius: "75",
+    height: "60",
+    width: "60",
+    top: "10",
+}
+
+".name_description": {
+	layout: "vertical",
+	width: "39%",
+}
+
+".name": {
+	left: "5",
+	top: "10",
+	color: "#59d3ca",
+	font: {
+		fontSize: "18",
+	}
+}
+
+".date": {
+	layout: "vertical",
+	width: "38%",
+}
+
+
+
+

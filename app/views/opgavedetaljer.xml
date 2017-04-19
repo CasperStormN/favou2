@@ -1,0 +1,78 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<View>
+		<ScrollView layout="vertical"> 
+		<View class="pagetitleview"><Label class="lobster pagetitle">Opgavedetaljer</Label></View> 
+		
+		<Label class="opgavetitel">Hjælp til flytning søges</Label>
+		<Label class="opgavedato">14/02 2017</Label>
+		
+		<ImageView id="profile_picture" image="/images/profile_pic1.png" />
+		
+		<Label class="user_name">Jens Larsen</Label>
+		<Button id="gruppechat_btn" onClick="toGruppechat">Gruppechat</Button>
+		
+		<View class="details">
+			
+			<View class="opgave_detaljer"> 
+				<Label class="detalje_h2">Kategori: </Label>
+				<Label>Flytning</Label>
+			</View>
+			
+			<View class="opgave_detaljer"> 
+				<Label class="detalje_h2">Adresse: </Label>
+				<Label>Klokkestøbervej 3, 5000 Odense</Label>
+			</View>
+			
+			<View class="opgave_detaljer"> 
+				<Label class="detalje_h2">Antal personer: </Label>
+				<Label>3</Label>
+			</View>
+			
+			 <View class="opgave_detaljer"> 
+				<Label class="detalje_h2">Beskrivelse: </Label>
+			</View>
+			
+			<View class="opgave_beskrivelse"> 
+				<Label>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce neque eros, volutpat quis ultricies vel, pulvinar a arcu. Morbi lacinia laoreet nisi et porta. Duis vestibulum blandit ligula. Morbi molestie purus sed mauris bibendum, ut rutrum nisl hendrerit. Nam non efficitur eros. Morbi tristique ante vel ornare accumsan.Hej med dig
+				</Label>
+			</View>
+			
+		
+		</View> 
+		
+		<Label class="lobster h2">Deltagere</Label> 
+		
+		<View class="deltagere">
+			<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
+			<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
+			<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
+			<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
+			<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
+			<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
+			
+			</View>
+		</ScrollView>
+		
+			<View id="bottom_nav">
+				<View class="tab" onClick="toOpdag">
+					<ImageView class="tab_img" image="/images/opdag.png" />
+					<Label class="tab_lbl" text="Opdag" />	
+				</View>
+				<View class="active tab" onClick="toTilmeldte">
+					<ImageView class="tab_img" image="/images/tilmeldte_opgaver_a.png" />
+					<Label class="tab_lbl active_lbl" text="Tilmeldte opgaver" />	
+				</View>
+				<View class="tab" onClick="toProfil">
+					<ImageView class="tab_img" image="/images/profil.png" />
+					<Label class="tab_lbl" text="Profil" />
+				</View>
+				<View class="tab" onClick="toIndstillinger">
+					<ImageView class="tab_img" image="/images/indstillinger.png" /> 
+					<Label class="tab_lbl" text="Indstillinger" />	
+				</View>
+			</View>
+		</View>
+		
+	</Window>
+</Alloy>

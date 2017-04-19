@@ -1,0 +1,20 @@
+<Alloy>
+		<View id="bottom_nav">
+			<View class="tab">
+				<ImageView class="tab_img" image="https://image.ibb.co/dK6kyv/matches.png" />
+				<Label class="tab_lbl active_lbl" text="Matches" />	
+			</View>
+			<View class="tab">
+				<ImageView class="tab_img" image="https://image.ibb.co/bwadJv/top_players.png" />
+				<Label class="tab_lbl" text="Top players" />	
+			</View>
+			<View class="tab">
+				<ImageView class="tab_img" image="https://image.ibb.co/gapG5a/favorites.png" />
+				<Label class="tab_lbl" text="Favorites" />	
+			</View>
+			<View class="tab">
+				<ImageView class="tab_img" image="https://image.ibb.co/dTMJJv/settings.png" />
+				<Label class="tab_lbl" text="Settings" />	
+			</View>
+		</View>
+</Alloy>

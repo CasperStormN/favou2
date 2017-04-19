@@ -1,0 +1,72 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<View>
+			<ScrollView layout="vertical">
+				<View class="pagetitleview">
+					<Label class="lobster pagetitle">Indstillinger</Label>
+				</View>
+				<View layout="vertical">
+					<View class="inputfield" layout="horizontal">
+						<View width="50%">
+							<Label class="inputlabel">Lydstyrke</Label>
+						</View>
+						<View width="49.9%">
+							
+							<View backgroundColor="#ccc" height="2" width="76%"></View>
+							<Slider id="slider" width="100%" value="50"/>
+						</View>
+					</View>
+					<View class="inputfield" layout="horizontal">
+						<View width="50%">
+							<Label class="inputlabel">Push notifikationer</Label>
+						</View>
+						<View width="49.9%">
+							<View backgroundColor="#ccc" height="14" width="17%" borderRadius="50" right="21dp"></View>
+							<Switch right="10dp" value="true"></Switch>
+						</View>
+					</View>
+					<View class="inputfield" layout="horizontal">
+						<View width="50%">
+							<Label class="inputlabel">Vilkår og betingelser</Label>
+						</View>
+						<View width="49.9%">
+							<ImageView right="15" image="/images/arrow.png"></ImageView>
+						</View>
+					</View>
+					<View class="inputfield" layout="horizontal">
+						<View width="50%" layout="horizontal">
+							<View width="60%">
+								<Label class="inputlabel">Afstand i km</Label>
+							</View>
+							<View width="40%">
+								<Label id="distancelabel" class="afstand"></Label>
+							</View>
+						</View>
+						<View width="49.9%">
+							<View backgroundColor="#ccc" height="2" width="76%"></View>
+							<Slider id="distanceslider" width="100%" value="50" min="0" max="50" onChange="updateLabel"/>
+						</View>
+					</View>
+				</View>
+			</ScrollView>
+			<View id="bottom_nav">
+				<View class="tab" onClick="toOpdag">
+					<ImageView class="tab_img" image="/images/opdag.png" />
+					<Label class="tab_lbl" text="Opdag" />
+				</View>
+				<View class="tab" onClick="toTilmeldte">
+					<ImageView class="tab_img" image="/images/tilmeldte_opgaver.png" />
+					<Label class="tab_lbl" text="Tilmeldte opgaver" />
+				</View>
+				<View class="tab" onClick="toProfil">
+					<ImageView class="tab_img" image="/images/profil.png" />
+					<Label class="tab_lbl" text="Profil" />
+				</View>
+				<View class="active tab" onClick="toIndstillinger">
+					<ImageView class="tab_img" image="/images/indstillinger_a.png" />
+					<Label class="active_lbl" text="Indstillinger" />
+				</View>
+			</View>
+		</View>
+	</Window>
+</Alloy>

@@ -1,0 +1,20 @@
+<Alloy>
+	<Window class="container" layout="vertical" id="login">
+		<ImageView image="/images/logo.png" class="logo"></ImageView>
+		<LoginButton id="fbLogin" module="facebook" class="fb_login_btn" />
+		<!--
+		<Label onClick="toOpdag">Opdag</Label>
+		<Label onClick="toProfil">Profil</Label>
+		<Label onClick="toIndstillinger">Indstillinger</Label>
+		<Label onClick="toGruppechat">Gruppechat</Label>
+		<Label onClick="toOpgavedetaljer">Opgavedetaljer</Label>
+		<Label onClick="toOpret">Opret</Label>
+		<Label onClick="toTilmeldte">Tilmeldte</Label>
+		-->
+		<View class="loginpage_info" layout="vertical">
+			<Label class="loginpage_infolabel">Velkommen til Favou. </Label>
+			<Label class="loginpage_infolabel">Ved at logge ind med Facebook, giver du samtidig din samtykke til at vi kan hente dine profiloplysninger. Vi poster aldrig noget på dine vegne.</Label>
+		</View>
+		
+	</Window>
+</Alloy>
