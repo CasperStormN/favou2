@@ -12,12 +12,19 @@
 					<Label class="input_label" id="date_label">Dato</Label>
 					<ImageView image="/images/arrow.png" right="15dp"></ImageView>
 				</View>
-				<View layout="horizontal" class="time_picker_view">
-					<TextField id="postTimer" class="time_input_field" hintText="Timer" hintTextColor="black" maxLength="2"></TextField>
-					<View width="10%"></View>
-					<TextField id="postMinutter" class="time_input_field" hintText="Minutter" hintTextColor="black" maxLength="2"></TextField>
-				</View>
+				<TextField id="postTidspunkt" class="input_field" hintText="Tidspunkt" hintTextColor="black"></TextField>
+
 				<TextField id="postPerson" class="input_field" hintText="Person Behov" hintTextColor="black"></TextField>
+				<View class="input_field">
+					<Picker id="picker" selectionIndicator="true" width="100%" height="100%">
+		                <PickerRow onClick="category_selected" title="Bananas"/>
+		                <PickerRow title="Strawberries"/>
+		                <PickerRow title="Mangos"/>
+		                <PickerRow title="Grapes"/>
+        			</Picker>
+        			<Label id="category_label" class="input_label">Kategori</Label>
+				</View>
+			<!--
 				<View class="input_field" onClick="show_categories">
 					<Label class="input_label">Kategori</Label>
 					<ImageView image="/images/arrow.png" right="15dp"></ImageView>
@@ -80,6 +87,7 @@
 					</View>
 					<View class="spacer-view"></View>
 				</View>
+			-->
 				<TextArea id="postBeskrivelse" class="textarea_field" hintText="Beskrivelse af opgave" hintTextColor="black" maxLength="1000"></TextArea>
 				<Button id="createNode" class="opret_btn">Opret</Button>
 			</ScrollView>

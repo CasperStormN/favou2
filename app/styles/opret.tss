@@ -18,27 +18,6 @@
 	}
 }
 
-".time_picker_view": {
-	width:"80%",
-	height:"50dp",
-	top:"25dp",
-	backgroundColor:"#192935"
-}
-
-".time_input_field": {
-	width:"45%",
-	height:"100%",
-	color:"black",
-	backgroundColor:"white",
-	border: "1dp",
-	borderColor:"#59d3ca",
-	inputType: Titanium.UI.INPUT_TYPE_CLASS_NUMBER,
-	font: {
-		fontSize:"14dp",
-		fontFamily:"Roboto-Light"
-	}
-}
-
 ".textarea_field": {
 	width:"80%",
 	height:"150dp",

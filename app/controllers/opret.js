@@ -27,6 +27,10 @@ function show_date_picker() {
 	});
 }
 
+function category_selected(e) {
+	$.category_label.text = e.title;
+}
+
 /*$.categories.hide();
 
 var shown = false;
