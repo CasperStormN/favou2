@@ -12,11 +12,11 @@
 					<Label class="input_label" id="date_label">Dato</Label>
 					<ImageView image="/images/arrow.png" right="15dp"></ImageView>
 				</View>
-				<!--<View layout="horizontal" class="time_picker_view">
+				<View layout="horizontal" class="time_picker_view">
 					<TextField id="postTimer" class="time_input_field" hintText="Timer" hintTextColor="black" maxLength="2"></TextField>
 					<View width="10%"></View>
 					<TextField id="postMinutter" class="time_input_field" hintText="Minutter" hintTextColor="black" maxLength="2"></TextField>
-			</View>-->
+				</View>
 				<TextField id="postPerson" class="input_field" hintText="Person Behov" hintTextColor="black"></TextField>
 				<View class="input_field" onClick="show_categories">
 					<Label class="input_label">Kategori</Label>
