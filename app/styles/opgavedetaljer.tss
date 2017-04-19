@@ -85,3 +85,11 @@
     height: "80",
     borderRadius: "40",
 } 
+
+"#subscribe_btn" : {
+	backgroundColor: "#59D3CA",
+	width: "150dp",
+	height: "40dp",
+	bottom: "12dp",
+	borderRadius: "10", 
+}
