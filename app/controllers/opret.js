@@ -27,7 +27,7 @@ function show_date_picker() {
 	});
 }
 
-$.categories.hide();
+/*$.categories.hide();
 
 var shown = false;
 
@@ -45,7 +45,7 @@ function show_categories() {
 		shown = false;
 	}	
 }
-
+*/
 $.createNode.addEventListener("click", function() {
 	var newNode = Alloy.createModel('PostNode');
 	
@@ -69,7 +69,12 @@ $.createNode.addEventListener("click", function() {
 	    {
 	      "value": $.postBeskrivelse.value
 	    }
-	  ],  
+	  ],
+	  "field_time": [
+	    {
+	      "value": $.postTidspunkt.value
+	    }
+	  ],
 	  "field_dato": [
 	    {
 	      "value": $.date_label.text
