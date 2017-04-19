@@ -15,8 +15,8 @@
 							<Label left="5" top="10">Flytning</Label>
 						</View>
 						<View class="date">
-							<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
-							<Label right="20" top="10">d.12.07.17</Label>
+							<ImageView image="/images/arrow.png" right="10" top="13"></ImageView>
+							<Label right="10" top="15">d.12.07.17</Label>
 						</View>
 
 					</View>
@@ -29,8 +29,8 @@
 							<Label left="5" top="10">Flytning</Label>
 						</View>
 						<View class="date">
-							<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
-							<Label right="20" top="10">d.12.07.17</Label>
+							<ImageView image="/images/arrow.png" right="10" top="13"></ImageView>
+							<Label right="10" top="15">d.12.07.17</Label>
 						</View>
 
 					</View>
@@ -43,8 +43,8 @@
 							<Label left="5" top="10">Flytning</Label>
 						</View>
 						<View class="date">
-							<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
-							<Label right="20" top="10">d.12.07.17</Label>
+							<ImageView image="/images/arrow.png" right="10" top="13"></ImageView>
+							<Label right="10" top="15">d.12.07.17</Label>
 						</View>
 
 					</View>
