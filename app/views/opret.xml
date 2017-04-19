@@ -6,18 +6,21 @@
 					<ImageView image="/images/arrow_teal.png" class="back_btn" onClick="toOpdag"></ImageView>
 					<Label class="lobster pagetitle">Opret opgave</Label>
 				</View>
-				<TextField id="postTitle" class="input_field" hintText="Titel" hintTextColor="black" maxLength="50"></TextField>
-				<TextField id="postAdresse" class="input_field" hintText="Adresse" hintTextColor="black"></TextField>
+				<TextField class="input_field" hintText="Titel" hintTextColor="black" maxLength="50"></TextField>
+				<TextField class="input_field" hintText="Adresse" hintTextColor="black"></TextField>
 				<View class="input_field" onClick="show_date_picker">
 					<Label class="input_label" id="date_label">Dato</Label>
 					<ImageView image="/images/arrow.png" right="15dp"></ImageView>
 				</View>
-				<!--<View layout="horizontal" class="time_picker_view">
-					<TextField id="postTimer" class="time_input_field" hintText="Timer" hintTextColor="black" maxLength="2"></TextField>
+				<View layout="horizontal" class="time_picker_view">
+					<TextField class="time_input_field" hintText="Timer" hintTextColor="black" maxLength="2" ></TextField>
 					<View width="10%"></View>
-					<TextField id="postMinutter" class="time_input_field" hintText="Minutter" hintTextColor="black" maxLength="2"></TextField>
-			</View>-->
-				<TextField id="postPerson" class="input_field" hintText="Person Behov" hintTextColor="black"></TextField>
+					<TextField class="time_input_field" hintText="Minutter" hintTextColor="black" maxLength="2"></TextField>
+				</View>
+				
+				
+				
+				<TextField class="input_field" hintText="Person Behov" hintTextColor="black"></TextField>
 				<View class="input_field" onClick="show_categories">
 					<Label class="input_label">Kategori</Label>
 					<ImageView image="/images/arrow.png" right="15dp"></ImageView>
@@ -80,8 +83,8 @@
 					</View>
 					<View class="spacer-view"></View>
 				</View>
-				<TextArea id="postBeskrivelse" class="textarea_field" hintText="Beskrivelse af opgave" hintTextColor="black" maxLength="1000"></TextArea>
-				<Button id="createNode" class="opret_btn">Opret</Button>
+				<TextArea class="textarea_field" hintText="Beskrivelse af opgave" hintTextColor="black" maxLength="1000"></TextArea>
+				<Button class="opret_btn">Opret</Button>
 			</ScrollView>
 		</View>
 	</Window>
