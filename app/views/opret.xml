@@ -16,11 +16,19 @@
 
 				<TextField id="postPerson" class="input_field" hintText="Person Behov" hintTextColor="black"></TextField>
 				<View class="input_field">
-					<Picker id="picker" selectionIndicator="true" width="100%" height="100%">
-		                <PickerRow onClick="category_selected" title="Bananas"/>
-		                <PickerRow title="Strawberries"/>
-		                <PickerRow title="Mangos"/>
-		                <PickerRow title="Grapes"/>
+					<Picker onChange="category_selected" id="picker" selectionIndicator="true" width="100%" height="100%">
+		                <PickerRow title="Musik"/>
+		                <PickerRow title="Dyr"/>
+		                <PickerRow title="Madlavning"/>
+		                <PickerRow title="Kunst"/>
+		                <PickerRow title="Håndarbejde"/>
+		                <PickerRow title="Havearbejde"/>
+		                <PickerRow title="Mekanik"/>
+		                <PickerRow title="Sport"/>
+		                <PickerRow title="Underholdning"/>
+		                <PickerRow title="Socialt arbejde"/>
+		                <PickerRow title="Natur"/>
+		                <PickerRow title="Mode"/>
         			</Picker>
         			<Label id="category_label" class="input_label">Kategori</Label>
 				</View>

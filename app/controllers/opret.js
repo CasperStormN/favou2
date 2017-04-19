@@ -28,7 +28,7 @@ function show_date_picker() {
 }
 
 function category_selected(e) {
-	$.category_label.text = e.title;
+	$.category_label.text = e.row.title;
 }
 
 /*$.categories.hide();
@@ -52,6 +52,12 @@ function show_categories() {
 */
 $.createNode.addEventListener("click", function() {
 	var newNode = Alloy.createModel('PostNode');
+	
+	var cat = $.category_label.text;
+	
+	JSON.stringify(cat);
+
+	cat = cat.replace(" ", "");
 	
 	var params = {
 	  "type": [
@@ -86,7 +92,7 @@ $.createNode.addEventListener("click", function() {
 	  ],
 	  "field_kategori": [
 	    {
-	      "value": "Håndarbejde"
+	      "value": cat
 	    }
 	  ],
 	  "uid": [
