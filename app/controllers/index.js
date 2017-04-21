@@ -3,8 +3,65 @@ var fb = Alloy.Globals.Facebook;
 
 fb.addEventListener('login', function(e) {
     if (e.success == true) {
-        alert('login from uid: '+e.uid+', name: '+ JSON.parse(e.data).name);
-		toOpdag();
+    	
+		var newUser = Alloy.createModel('PostUser');
+		var params = {
+			"name":
+				{
+					"value": e.uid
+				},
+			"pass":"password",
+			"field_kategori": [
+		    {
+			  "value": "Musik"
+			},
+			{
+			  "value": "Dyr"
+			},
+			{
+			  "value": "Madlavning"
+			},
+			{
+			  "value": "Kunst"
+			},
+			{
+			  "value": "Håndarbejde"
+			},
+			{
+			  "value": "Havearbejde"
+			},
+			{
+			  "value": "Mekanik"
+			},
+			{
+			  "value": "Sport"
+			},
+			{
+			  "value": "Underholdning"
+			},
+			{
+			  "value": "Socialt arbejde"
+			},
+			{
+			  "value": "Natur"
+			},
+			{
+			  "value": "Mode"
+			}
+		  ],
+		  "field_name": {
+		  	"value": JSON.parse(e.data).name
+		  },
+		  "status": "1"
+		};
+		
+		newUser.save(params, {
+			success: function(model, response) {
+				alert('login from uid: '+e.uid+', name: '+ JSON.parse(e.data).name);
+				toOpdag();
+			},
+			error: function(err) {alert("Fejl i oprettelse");}
+		});
     }
     else if (e.cancelled) {
         // user cancelled
