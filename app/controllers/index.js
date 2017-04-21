@@ -1,12 +1,10 @@
+$.login.open();
 var fb = Alloy.Globals.Facebook;
 
 fb.addEventListener('login', function(e) {
     if (e.success == true) {
-        //alert('login from uid: '+e.uid+', name: '+ JSON.parse(e.data).name);
-        Alloy.Collections.instance("Nodes");
-		Alloy.Collections.instance("Nodes").fetch();
-        var page = Alloy.createController('opdag').getView();
-		page.open();
+        alert('login from uid: '+e.uid+', name: '+ JSON.parse(e.data).name);
+		toOpdag();
     }
     else if (e.cancelled) {
         // user cancelled
@@ -60,4 +58,3 @@ function toTilmeldte() {
 	page.open();
 }
 
-$.login.open();

@@ -12,7 +12,7 @@
 					<Label class="input_label" id="date_label">Dato</Label>
 					<ImageView image="/images/arrow.png" right="15dp"></ImageView>
 				</View>
-				<TextField id="postTidspunkt" class="input_field" hintText="Tidspunkt" hintTextColor="black"></TextField>
+				<TextField id="postTidspunkt" class="input_field" hintText="Tidspunkt (12:00)" hintTextColor="black"></TextField>
 
 				<TextField id="postPerson" class="input_field" hintText="Person Behov" hintTextColor="black"></TextField>
 				<View class="input_field">

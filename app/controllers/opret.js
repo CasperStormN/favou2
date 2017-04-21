@@ -53,11 +53,18 @@ function show_categories() {
 $.createNode.addEventListener("click", function() {
 	var newNode = Alloy.createModel('PostNode');
 	
+	// Removes the space in category
 	var cat = $.category_label.text;
-	
 	JSON.stringify(cat);
-
 	cat = cat.replace(" ", "");
+	
+	// Check if a  time is set. If not, default is 12:00
+	var time = $.postTidspunkt.value;
+	if(!!time) {
+		
+	} else {
+		time = '12:00';
+	}
 	
 	var params = {
 	  "type": [
@@ -82,7 +89,7 @@ $.createNode.addEventListener("click", function() {
 	  ],
 	  "field_time": [
 	    {
-	      "value": $.postTidspunkt.value
+	      "value": time
 	    }
 	  ],
 	  "field_dato": [

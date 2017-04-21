@@ -11,7 +11,7 @@
 // Alloy.Globals.someGlobalFunction = function(){};
 
 Alloy.Globals.Facebook = require('facebook');
-Alloy.Globals.Facebook.permissions = ['public', 'email', 'user_birthday', 'user_location', 'picture'];
+Alloy.Globals.Facebook.permissions = ['public_profile', 'email', 'user_birthday', 'user_location', 'picture'];
 Alloy.Globals.Facebook.initialize();
 Alloy.Globals.Facebook.authorize();
 
@@ -23,6 +23,7 @@ function toOpdag() {
 	Alloy.Collections.instance("Nodes").fetch();
 	var page = Alloy.createController('opdag').getView();
 	page.open();
+	
 }
 
 function toIndstillinger() {
