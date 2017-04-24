@@ -87,6 +87,8 @@ if (Ti.Platform.name === 'android') {
 }
 
 function toOpdag() {
+	Alloy.Collections.instance("Nodes");
+	Alloy.Collections.instance("Nodes").fetch();
 	var page = Alloy.createController('opdag').getView();
 	page.open();
 }
@@ -118,4 +120,3 @@ function toTilmeldte() {
 	var page = Alloy.createController('tilmeldte').getView();
 	page.open();
 }
-

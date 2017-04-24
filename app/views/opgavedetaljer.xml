@@ -54,7 +54,7 @@
 				</View>
 				<View class="active tab" onClick="toTilmeldte">
 					<ImageView class="tab_img" image="/images/tilmeldte_opgaver_a.png" />
-					<Label class="tab_lbl active_lbl" text="Tilmeldte opgaver" />
+					<Label class="active_lbl" text="Tilmeldte opgaver" />
 				</View>
 				<View class="tab" onClick="toProfil">
 					<ImageView class="tab_img" image="/images/profil.png" />

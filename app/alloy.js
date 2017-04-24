@@ -15,8 +15,7 @@ Alloy.Globals.Facebook.permissions = ['public_profile', 'email', 'user_birthday'
 Alloy.Globals.Facebook.initialize();
 Alloy.Globals.Facebook.authorize();
 
-Alloy.Collections.instance("Nodes");
-Alloy.Collections.instance("Nodes").fetch();
+
 
 var OldWin;
 
@@ -26,8 +25,8 @@ require('alloy/moment/lang/da');
 function toOpdag() {
 	oldWin();
 	var page = Alloy.createController('opdag').getView();
+	OldWin = page;
 	page.open();
-	OldWin = page;	
 }
 
 function oldWin() {
@@ -37,29 +36,52 @@ function oldWin() {
 }
 
 function toIndstillinger() {
+	oldWin();
 	var page = Alloy.createController('indstillinger').getView();
+	OldWin = page;
 	page.open();
 }
 
 function toGruppechat() {
+	oldWin();
 	var page = Alloy.createController('gruppechat').getView();
+	OldWin = page;
 	page.open();
 }
 
 function toOpret() {
+	oldWin();
 	var page = Alloy.createController('opret').getView();
+	OldWin = page;
 	page.open();
 }
 
 function toOpgavedetaljer() {
+	oldWin();
 	var page = Alloy.createController('opgavedetaljer').getView();
+	OldWin = page;
 	page.open();
 }
 function toProfil() {
+	oldWin();
 	var page = Alloy.createController('profil').getView();
+	OldWin = page;
 	page.open();
 }
 function toTilmeldte() {
+	oldWin();
 	var page = Alloy.createController('tilmeldte').getView();
+	OldWin = page;
 	page.open();
 }
+
+/*
+var lib = require('routing');
+lib.toOpdag();
+lib.toIndstillinger();
+lib.toGruppechat();
+lib.toOpret();
+lib.toOpgavedetaljer();
+lib.toProfil();
+lib.toTilmeldte();
+*/
