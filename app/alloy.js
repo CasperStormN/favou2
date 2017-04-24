@@ -15,15 +15,25 @@ Alloy.Globals.Facebook.permissions = ['public_profile', 'email', 'user_birthday'
 Alloy.Globals.Facebook.initialize();
 Alloy.Globals.Facebook.authorize();
 
+Alloy.Collections.instance("Nodes");
+Alloy.Collections.instance("Nodes").fetch();
+
+var OldWin;
+
 var moment = require('alloy/moment');
 require('alloy/moment/lang/da');
 
 function toOpdag() {
-	Alloy.Collections.instance("Nodes");
-	Alloy.Collections.instance("Nodes").fetch();
+	oldWin();
 	var page = Alloy.createController('opdag').getView();
 	page.open();
-	
+	OldWin = page;	
+}
+
+function oldWin() {
+	if(OldWin) {
+		OldWin.close();
+	}
 }
 
 function toIndstillinger() {

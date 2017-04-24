@@ -60,7 +60,13 @@ fb.addEventListener('login', function(e) {
 				alert('login from uid: '+e.uid+', name: '+ JSON.parse(e.data).name);
 				toOpdag();
 			},
-			error: function(err) {alert("Fejl i oprettelse");}
+			error: function(err) {
+				alert("Fejl i oprettelse");
+				/*for(i = 0; i < err.length; i++){
+					Ti.API.error('Error is here!!!!!');
+					Ti.API.error(err);
+				}*/
+			}
 		});
     }
     else if (e.cancelled) {
@@ -81,8 +87,6 @@ if (Ti.Platform.name === 'android') {
 }
 
 function toOpdag() {
-	Alloy.Collections.instance("Nodes");
-	Alloy.Collections.instance("Nodes").fetch();
 	var page = Alloy.createController('opdag').getView();
 	page.open();
 }
