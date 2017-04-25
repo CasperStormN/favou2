@@ -60,8 +60,12 @@ fb.addEventListener('login', function(e) {
 				alert('login from uid: '+e.uid+', name: '+ JSON.parse(e.data).name);
 				toOpdag();
 			},
-			error: function(err) {
-				alert("Fejl i oprettelse");
+			error: function(err, response) {
+				err = JSON.stringify(err);
+				response = JSON.stringify(response);
+				
+				alert("Fejl i oprettelse " + err + response.message);
+
 				/*for(i = 0; i < err.length; i++){
 					Ti.API.error('Error is here!!!!!');
 					Ti.API.error(err);
