@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Window class="container" layout="vertical" onOpen="showCurrentPosition" id="opdag">
 		<View>
 			<ScrollView layout="vertical">
 				<View class="pagetitleview">
@@ -17,8 +17,41 @@
 						<Label class="nav_tab_lbl">Søg</Label>
 					</View>
 				</View>
-				<ImageView class="map" image="/images/map.jpg"></ImageView>
-				
+				<!-- Android: Add MenuItem with ActionView for search -->
+		<Menu platform="android">
+
+			<!-- We give it an id so we can collapse the ActionView in the controller -->
+			<MenuItem id="searchMenu">
+
+				<!-- On Android menu items can contain a view -->
+				<ActionView>
+
+					<!-- Since there are multiple SearchView objects, we need to specificy the namespace -->
+					<SearchView ns="Ti.UI.Android" hintText="Location" onSubmit="geocodeLocation" />
+
+				</ActionView>
+
+			</MenuItem>
+		</Menu>
+
+		<!-- iOS: Thanks to canvasTop in alloy.js and app.tss this starts below the statusBar -->
+		<View class="canvas">
+
+			<SearchBar platform="ios" hintText="Location" onReturn="geocodeLocation" />
+
+			<!--
+				The module-tag is very powerful. It translates to `require('ti.map').create<Tag|method>`
+				allowing you to provide your own UI factory methodes in a native or CommonJS module. In this case
+				the view is delivered by the `ti.map` add-on module.
+			-->
+			<View module="ti.map" id="map" onLongclick="reverseGeocode">
+
+				<!-- Maps can contain child views as overlays -->
+				<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
+
+			</View>
+
+		</View>
 				<TableView id="table" top="2" dataCollection="Nodes" dataTransform="transform">
 					<TableViewRow  modelId="{cid}">
 						<View top="-2" class="tilmeldt_opg" onClick="toOpgavedetaljer">
@@ -81,8 +114,8 @@
 							<Label right="20" top="10">d.12.07.17</Label>
 						</View>
 					</View>
-				</View>
-				-->
+				</View>-->
+
 
 			</ScrollView>
 			<View id="bottom_nav">
