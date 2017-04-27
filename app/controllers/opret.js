@@ -2,6 +2,8 @@
 //this is how we accept arguments passed to the controller (usually from another controller)
 var args = arguments[0] || {};
 
+alert(Alloy.Globals.user);
+
 function report(e) {
     Ti.API.info('User selected: ' + e.value);
 }

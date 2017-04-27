@@ -11,10 +11,11 @@
 // Alloy.Globals.someGlobalFunction = function(){};
 
 Alloy.Globals.Facebook = require('facebook');
-Alloy.Globals.Facebook.permissions = ['public_profile', 'email', 'user_birthday', 'user_location', 'picture'];
+Alloy.Globals.Facebook.permissions = ['public_profile', 'email', 'user_birthday', 'user_location'];
 Alloy.Globals.Facebook.initialize();
 Alloy.Globals.Facebook.authorize();
 
+Alloy.Collections.instance("Users");
 
 
 var OldWin;

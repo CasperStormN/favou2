@@ -1,8 +1,26 @@
 $.login.open();
 var fb = Alloy.Globals.Facebook;
-
 fb.addEventListener('login', function(e) {
     if (e.success == true) {
+    	/* Gets the permissions - good to check if the permissions is right
+    	var permis = fb.getPermissions();
+    	permis = JSON.stringify(permis);
+    	alert(permis);
+    	*/
+    	/*fb.requestNewReadPermissions(['public_profile', 'email', 'user_birthday', 'user_location'], function(e) {
+    		if (e.success) {
+
+    		}
+    	});*/
+    	fb.requestWithGraphPath('me', {fields: 'id, name, email, location, picture, birthday'}, 'GET', function(e) {
+        if (e.success) {                 
+            Ti.API.log('arrow.js : getFBEvents - result ' + e.result);
+            r = e.result;
+            alert('ID: ' + JSON.parse(r).id + ' Name: ' + JSON.parse(r).name + ' Email: ' + JSON.parse(r).email + ' Location: ' + JSON.parse(r).location.name + ' The rest: ' + r);
+        } else {
+        	Ti.API.log('Failed');
+        }
+		});
     	
 		var newUser = Alloy.createModel('PostUser');
 		var params = {
@@ -58,18 +76,23 @@ fb.addEventListener('login', function(e) {
 		newUser.save(params, {
 			success: function(model, response) {
 				alert('login from uid: '+e.uid+', name: '+ JSON.parse(e.data).name);
-				toOpdag();
+				//toOpdag();
 			},
 			error: function(err, response) {
 				err = JSON.stringify(err);
-				response = JSON.stringify(response);
+				response = JSON.stringify(response.message);
+				id = JSON.stringify(e.uid);
+				name = JSON.parse(e.data).name;
 				
-				alert("Fejl i oprettelse " + err + response.message);
-
-				/*for(i = 0; i < err.length; i++){
-					Ti.API.error('Error is here!!!!!');
-					Ti.API.error(err);
-				}*/
+				if(response = "User already exists") {
+					//toOpdag();
+					Alloy.Globals.user = {"id":id, "name": name};
+					//alert("Fejl i oprettelse. Response: " + response + ' UID: ' + id);
+				} else {
+					alert("Test. Response: " + response + ' UID: ' + id);
+				}
+				
+				
 			}
 		});
     }
