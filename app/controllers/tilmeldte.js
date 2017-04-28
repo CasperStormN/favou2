@@ -3,11 +3,13 @@ var args = $.args;
 
 var buttonSwiped = 0;
 
-//$.deletebtn.show();
+/*
+$.deletebtn.hide();
 
 function showdelete(){
-	$.deletebtn.hide();
+	$.deletebtn.show();
 }
+*/
 
 /*
 function showDelete(){
