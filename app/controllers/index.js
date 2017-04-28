@@ -2,99 +2,104 @@ $.login.open();
 var fb = Alloy.Globals.Facebook;
 fb.addEventListener('login', function(e) {
     if (e.success == true) {
-    	/* Gets the permissions - good to check if the permissions is right
-    	var permis = fb.getPermissions();
+    	// Gets the permissions
+    	/*var permis = fb.getPermissions();
     	permis = JSON.stringify(permis);
-    	alert(permis);
-    	*/
-    	/*fb.requestNewReadPermissions(['public_profile', 'email', 'user_birthday', 'user_location'], function(e) {
-    		if (e.success) {
-
-    		}
-    	});*/
-    	fb.requestWithGraphPath('me', {fields: 'id, name, email, location, picture, birthday'}, 'GET', function(e) {
-        if (e.success) {                 
-            Ti.API.log('arrow.js : getFBEvents - result ' + e.result);
-            r = e.result;
-            alert('ID: ' + JSON.parse(r).id + ' Name: ' + JSON.parse(r).name + ' Email: ' + JSON.parse(r).email + ' Location: ' + JSON.parse(r).location.name + ' The rest: ' + r);
-        } else {
-        	Ti.API.log('Failed');
-        }
-		});
+    	if(permis = ["user_birthday","public_profile","email","user_location"]) {
+    	} else {
+    	}*/
     	
-		var newUser = Alloy.createModel('PostUser');
-		var params = {
-			"name":
-				{
-					"value": e.uid
-				},
-			"pass":"password",
-			"field_kategori": [
-		    {
-			  "value": "Musik"
-			},
-			{
-			  "value": "Dyr"
-			},
-			{
-			  "value": "Madlavning"
-			},
-			{
-			  "value": "Kunst"
-			},
-			{
-			  "value": "Håndarbejde"
-			},
-			{
-			  "value": "Havearbejde"
-			},
-			{
-			  "value": "Mekanik"
-			},
-			{
-			  "value": "Sport"
-			},
-			{
-			  "value": "Underholdning"
-			},
-			{
-			  "value": "Socialt arbejde"
-			},
-			{
-			  "value": "Natur"
-			},
-			{
-			  "value": "Mode"
-			}
-		  ],
-		  "field_name": {
-		  	"value": JSON.parse(e.data).name
-		  },
-		  "status": "1"
-		};
-		
-		newUser.save(params, {
-			success: function(model, response) {
-				alert('login from uid: '+e.uid+', name: '+ JSON.parse(e.data).name);
-				//toOpdag();
-			},
-			error: function(err, response) {
-				err = JSON.stringify(err);
-				response = JSON.stringify(response.message);
-				id = JSON.stringify(e.uid);
-				name = JSON.parse(e.data).name;
-				
-				if(response = "User already exists") {
-					//toOpdag();
-					Alloy.Globals.user = {"id":id, "name": name};
-					//alert("Fejl i oprettelse. Response: " + response + ' UID: ' + id);
-				} else {
-					alert("Test. Response: " + response + ' UID: ' + id);
-				}
-				
-				
-			}
-		});
+    	fb.requestNewReadPermissions(['public_profile', 'email', 'user_birthday', 'user_location'], function(e) {
+    		if (e.success) {
+				fb.requestWithGraphPath('me', {fields: 'id, name, email, location, picture, birthday'}, 'GET', function(e) {
+		        if (e.success) {
+		            var r = e.result;
+		            r = JSON.parse(r);
+		            var loca = r.location.name;
+		            loca = loca.replace(/,[^,]+$/, "");
+		            //alert('ID: ' + r.id + ' Name: ' + r.name + ' Email: ' + r.email + ' Location: ' + r.location.name + ' ImageUrl: ' + r.picture.data.url + ' Birthday: ' + r.birthday);
+		            var newUser = Alloy.createModel('PostUser');
+					var params = {
+					"name":
+					{
+						"value": r.id
+					},
+					"pass":"password",
+					"field_kategori": [
+				    {
+					  "value": "Musik"
+					},
+					{
+					  "value": "Dyr"
+					},
+					{
+					  "value": "Madlavning"
+					},
+					{
+					  "value": "Kunst"
+					},
+					{
+					  "value": "Håndarbejde"
+					},
+					{
+					  "value": "Havearbejde"
+					},
+					{
+					  "value": "Mekanik"
+					},
+					{
+					  "value": "Sport"
+					},
+					{
+					  "value": "Underholdning"
+					},
+					{
+					  "value": "Socialt arbejde"
+					},
+					{
+					  "value": "Natur"
+					},
+					{
+					  "value": "Mode"
+					}
+					],
+					"field_name": {
+					"value": r.name
+					},
+					"status": "1",
+					"field_birthday": r.birthday,
+					"field_email": r.email,
+					"field_location": loca,
+					"field_picture": r.picture.data.url
+					};
+					
+					newUser.save(params, {
+						success: function(model, response) {
+							Alloy.Globals.user = {"id":r.id, "name": r.name};
+							toOpdag();
+						},
+						error: function(err, response) {
+							// Used to debug the error
+							/* err = JSON.stringify(err);
+							response = JSON.stringify(response.message);
+							id = JSON.stringify(e.uid);
+							name = JSON.parse(e.data).name;*/
+							
+							if(response = "User already exists") {
+								Alloy.Globals.user = {"id":r.id, "name": r.name};
+								toOpdag();
+							} else {
+								alert("Fejl i oprettelse. Response: " + response);
+							}
+						}
+					});
+		        } else {
+		        	Ti.API.log('Failed');
+		        }
+				});
+    		}
+    	});
+    	
     }
     else if (e.cancelled) {
         // user cancelled
