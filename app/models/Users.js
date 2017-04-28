@@ -4,7 +4,7 @@ exports.definition = {
 		adapter: {
 			type: "restapi",
 			collection_name: "Users",
-			idAttribute: "facebook_userid",
+			idAttribute: "name",
 		},
 		headers: {
 			Accept: "application/json",

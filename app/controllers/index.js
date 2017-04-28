@@ -81,11 +81,21 @@ fb.addEventListener('login', function(e) {
 						error: function(err, response) {
 							// Used to debug the error
 							/* err = JSON.stringify(err);
-							response = JSON.stringify(response.message);
+							response = JSON.stringify(response);
 							id = JSON.stringify(e.uid);
 							name = JSON.parse(e.data).name;*/
-							
+
 							if(response = "User already exists") {
+								/* Fetches the entire collection - can't seem to find a way to just fetch a single one by id
+								var getUser = Alloy.createModel('Users');
+								getUser.fetch({
+									success: function(model, response) {
+										alert(JSON.stringify(response) + JSON.stringify(model));
+									},
+									error: function(err) {alert(JSON.stringify(response));}
+								});
+								*/
+								
 								Alloy.Globals.user = {"id":r.id, "name": r.name};
 								toOpdag();
 							} else {
