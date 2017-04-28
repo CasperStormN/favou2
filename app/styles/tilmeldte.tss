@@ -6,7 +6,6 @@
 
 ".tilmeldt_opg": {
 	height: "80dp",
-	width: "100%",
 	borderColor: "#59d3ca",
 	layout: "horizontal",
 }
@@ -25,7 +24,6 @@
 
 ".name_description": {
 	layout: "vertical",
-	width: "39%",
 }
 
 ".name": {
@@ -39,9 +37,10 @@
 
 ".date": {
 	layout: "vertical",
-	width: "38%",
 }
 
 
-
+".hidden": {
+	visibility: "hidden",
+}
 
