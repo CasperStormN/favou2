@@ -136,7 +136,6 @@ function setAnnotation(location) {
   'use strict';
 	
 	var lat = 55.4038;
-	
 	var lon = 10.4024;
 	
   // create the annotation

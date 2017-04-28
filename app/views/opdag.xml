@@ -2,10 +2,12 @@
 	<Window class="container" layout="vertical" onOpen="showCurrentPosition" id="opdag">
 		<View>
 			<ScrollView layout="vertical">
+				<!-- Pagetitle -->
 				<View class="pagetitleview">
 					<Label class="lobster pagetitle">Opdag</Label>
 					<Label class="add_btn"  onClick="toOpret">+</Label>
 				</View>
+				<!-- Nav buttons on top of the map-->
 				<View class="nav" layout="horizontal">
 					<View class="nav_tab active_nav_tab">
 						<Label class="nav_tab_lbl">I nærheden</Label>
@@ -17,41 +19,13 @@
 						<Label class="nav_tab_lbl">Søg</Label>
 					</View>
 				</View>
-				<!-- Android: Add MenuItem with ActionView for search -->
-		<Menu platform="android">
-
-			<!-- We give it an id so we can collapse the ActionView in the controller -->
-			<MenuItem id="searchMenu">
-
-				<!-- On Android menu items can contain a view -->
-				<ActionView>
-
-					<!-- Since there are multiple SearchView objects, we need to specificy the namespace -->
-					<SearchView ns="Ti.UI.Android" hintText="Location" onSubmit="geocodeLocation" />
-
-				</ActionView>
-
-			</MenuItem>
-		</Menu>
-
-		<!-- iOS: Thanks to canvasTop in alloy.js and app.tss this starts below the statusBar -->
-		<View class="canvas">
-
-			<SearchBar platform="ios" hintText="Location" onReturn="geocodeLocation" />
-
-			<!--
-				The module-tag is very powerful. It translates to `require('ti.map').create<Tag|method>`
-				allowing you to provide your own UI factory methodes in a native or CommonJS module. In this case
-				the view is delivered by the `ti.map` add-on module.
-			-->
-			<View module="ti.map" id="map" onLongclick="reverseGeocode">
-
-				<!-- Maps can contain child views as overlays -->
-				<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
-
-			</View>
-
-		</View>
+				<!-- Map -->
+				<View class="canvas">
+					<View module="ti.map" id="map" onLongclick="reverseGeocode">
+						<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
+					</View>
+				</View>
+				<!-- The events pulled dynamically from Drupal -->
 				<TableView id="table" top="2" dataCollection="Nodes" dataTransform="transform">
 					<TableViewRow  modelId="{cid}">
 						<View top="-2" class="tilmeldt_opg" onClick="toOpgavedetaljer">
@@ -69,55 +43,8 @@
 						</View>
 					</TableViewRow>
 				</TableView>
-				
-
-				<!--
-				<View layout="vertical">
-					<View class="tilmeldt_opg" onClick="toOpgavedetaljer">
-						<View class="profile_image">
-							<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
-						</View>
-						<View class="name_description">
-							<Label class="name">Jens Larsen</Label>
-							<Label left="5" top="10">Flytning</Label>
-						</View>
-						<View class="date">
-							<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
-							<Label right="20" top="10">d.12.07.17</Label>
-						</View>
-
-					</View>
-					<View class="tilmeldt_opg" top="-1" onClick="toOpgavedetaljer">
-						<View class="profile_image">
-							<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
-						</View>
-						<View class="name_description">
-							<Label class="name">Jens Larsen</Label>
-							<Label left="5" top="10">Flytning</Label>
-						</View>
-						<View class="date">
-							<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
-							<Label right="20" top="10">d.12.07.17</Label>
-						</View>
-
-					</View>
-					<View class="tilmeldt_opg" top="-1" onClick="toOpgavedetaljer">
-						<View class="profile_image">
-							<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
-						</View>
-						<View class="name_description">
-							<Label class="name">Jens Larsen</Label>
-							<Label left="5" top="10">Flytning</Label>
-						</View>
-						<View class="date">
-							<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
-							<Label right="20" top="10">d.12.07.17</Label>
-						</View>
-					</View>
-				</View>-->
-
-
 			</ScrollView>
+			<!-- Bottom nav buttons-->
 			<View id="bottom_nav">
 				<View class="active tab" onClick="toOpdag">
 					<ImageView class="tab_img" image="/images/opdag_a.png" />

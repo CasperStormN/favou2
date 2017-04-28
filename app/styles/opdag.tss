@@ -47,8 +47,6 @@
 }
 
 
-
-
 ".nav": {
 	height:"45dp",
 	width:"100%",
@@ -72,42 +70,16 @@
 ".active_nav_tab": {
 	backgroundColor: "#59d3ca"
 }
-/*
-".map": {
-	width:"100%",
-	height:Titanium.UI.SIZE
-}
-*/
-
-'#searchMenu': {
-
-	// Use an standard Android drawable
-	icon: Ti.Android.R.drawable.ic_menu_search,
-
-	// Always show the menu item in the ActionBar
-	// The ActionView can (and will be by default) collapsed (hidden) until you tap the icon
-	showAsAction: Ti.Android.SHOW_AS_ACTION_ALWAYS | Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
-}
 
 '.canvas': {
 
 	// Use vertical layout so the Map comes below the SearchBar, no matter its height
-	layout: 'vertical'
-}
-
-'SearchBar': {
-
-	// Use the color set in config.json
-	barColor: Alloy.CFG.brandPrimary
+	layout: 'vertical',
+	height: "40%",
 }
 
 '#map': {
-
-	// Allow the user to rotate the map on iOS7+
-	rotatesEnabled: true,
-
-	// Show the user location
-	userLocation: true
+	userLocation: true,
 }
 
 '.typeBtn': {
