@@ -1,6 +1,9 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
+Alloy.Collections.instance("Nodes");
+Alloy.Collections.instance("Nodes").fetch();
+
 function transform(model) {
 	//convert the model to a JSON object
 	var nodeObject = model.toJSON();
