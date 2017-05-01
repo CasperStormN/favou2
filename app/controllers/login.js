@@ -86,18 +86,31 @@ fb.addEventListener('login', function(e) {
 							name = JSON.parse(e.data).name;*/
 
 							if(response = "User already exists") {
-								/* Fetches the entire collection - can't seem to find a way to just fetch a single one by id
-								var getUser = Alloy.createModel('Users');
-								getUser.fetch({
-									success: function(model, response) {
-										alert(JSON.stringify(response) + JSON.stringify(model));
-									},
-									error: function(err) {alert(JSON.stringify(response));}
-								});
-								*/
 								
-								Alloy.Globals.user = {"id":r.id, "name": r.name};
-								toOpdag();
+								 var url = "http://drupal.casper-storm.dk/rest/views/users/" + r.id;
+								 var client = Ti.Network.createHTTPClient({
+								     // function called when the response data is available
+								     onload : function(e) {
+								     	 var ud = JSON.parse(this.responseText);
+								     	 ud = ud[0];
+								         Ti.API.info("Received text: " + ud);
+								         var userdata = {"uid":ud.uid, "fbid": ud.name, "name": ud.realname, "birthday": ud.birthday, "picture": ud.picture, "email": ud.email, "kategori": ud.kategori};
+								         //alert(userdata);
+								         Alloy.Globals.User = userdata;
+								         toOpdag();
+								     },
+								     // function called when an error occurs, including a timeout
+								     onerror : function(e) {
+								         Ti.API.debug(e.error);
+								         alert('error' + e.error);
+								     },
+								     timeout : 5000  // in milliseconds
+								 });
+								 // Prepare the connection.
+								 client.open("GET", url);
+								 // Send the request.
+								 client.send();
+								
 							} else {
 								alert("Fejl i oprettelse. Response: " + response);
 							}
@@ -129,8 +142,6 @@ if (Ti.Platform.name === 'android') {
 }
 
 function toOpdag() {
-	//Alloy.Collections.instance("Nodes");
-	//Alloy.Collections.instance("Nodes").fetch();
 	var page = Alloy.createController('opdag').getView();
 	page.open();
 }
