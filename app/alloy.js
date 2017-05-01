@@ -17,6 +17,7 @@ Alloy.Globals.Facebook.authorize();
 
 Alloy.Collections.instance("Users");
 
+Alloy.Globals.User;
 
 var OldWin;
 
