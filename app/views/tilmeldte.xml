@@ -9,7 +9,7 @@
 					<TableViewRow height="80dp">
 						<View>
 							<View class="tilmeldt_opg">
-								<View class="profile_image" onClick="showdelete">
+								<View class="profile_image">
 									<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
 								</View>
 								<View class="name_description" width="28%" backgroundColor="#fff">
