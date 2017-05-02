@@ -50,7 +50,8 @@
                     android:label="Favou"
                     android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
                 <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
-                <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCjhVcQDY1KWxXW2nN6ILo6l9-ulaeHvhI"/>
+                <meta-data
+                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCjhVcQDY1KWxXW2nN6ILo6l9-ulaeHvhI"/>
             </application>
         </manifest>
     </android>
@@ -65,6 +66,7 @@
     <modules>
         <module platform="android">facebook</module>
         <module platform="android">ti.map</module>
+        <module platform="android">net.iamyellow.tiws</module>
     </modules>
     <deployment-targets>
         <target device="iphone">false</target>
@@ -73,7 +75,7 @@
         <target device="mobileweb">false</target>
         <target device="windows">false</target>
     </deployment-targets>
-    <sdk-version>5.5.0.GA</sdk-version>
+    <sdk-version>6.0.1.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>

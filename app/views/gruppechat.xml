@@ -1,7 +1,16 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Window id="chat" class="container" layout="vertical">
 		<View class="pagetitleview">
 			<Label class="lobster pagetitle">Gruppechat</Label>
+		</View>
+		<ScrollView id="scrollChat" layout="vertical">
+			<ListView id="listChat" layout="vertical">
+			
+			</ListView>
+		</ScrollView>			
+		<View id="chatInterface" layout="horizontal">
+			<TextField id="chatInput" hintText="message"></TextField>
+			<Button id="chatSend" title="send"></Button>
 		</View>
 	</Window>
 </Alloy>
