@@ -17,7 +17,10 @@ fb.addEventListener('login', function(e) {
 		            r = JSON.parse(r);
 		            var loca = r.location.name;
 		            loca = loca.replace(/,[^,]+$/, "");
-		            //alert('ID: ' + r.id + ' Name: ' + r.name + ' Email: ' + r.email + ' Location: ' + r.location.name + ' ImageUrl: ' + r.picture.data.url + ' Birthday: ' + r.birthday);
+		            
+		            var age = moment(r.birthday);
+					var bd = age.format('YYYY-MM-DD');
+		            
 		            var newUser = Alloy.createModel('PostUser');
 					var params = {
 					"name":
@@ -70,13 +73,13 @@ fb.addEventListener('login', function(e) {
 					"field_birthday": r.birthday,
 					"field_email": r.email,
 					"field_location": loca,
-					"field_picture": r.picture.data.url
+					"field_picture": r.picture.data.url,
+					"field_age": bd
 					};
 					
 					newUser.save(params, {
 						success: function(model, response) {
-							Alloy.Globals.user = {"id":r.id, "name": r.name};
-							toOpdag();
+							getUserData(r.id);
 						},
 						error: function(err, response) {
 							// Used to debug the error
@@ -87,29 +90,7 @@ fb.addEventListener('login', function(e) {
 
 							if(response = "User already exists") {
 								
-								 var url = "http://drupal.casper-storm.dk/rest/views/users/" + r.id;
-								 var client = Ti.Network.createHTTPClient({
-								     // function called when the response data is available
-								     onload : function(e) {
-								     	 var ud = JSON.parse(this.responseText);
-								     	 ud = ud[0];
-								         Ti.API.info("Received text: " + ud);
-								         var userdata = {"uid":ud.uid, "fbid": ud.name, "name": ud.realname, "birthday": ud.birthday, "picture": ud.picture, "email": ud.email, "kategori": ud.kategori};
-								         //alert(userdata);
-								         Alloy.Globals.User = userdata;
-								         toOpdag();
-								     },
-								     // function called when an error occurs, including a timeout
-								     onerror : function(e) {
-								         Ti.API.debug(e.error);
-								         alert('error' + e.error);
-								     },
-								     timeout : 5000  // in milliseconds
-								 });
-								 // Prepare the connection.
-								 client.open("GET", url);
-								 // Send the request.
-								 client.send();
+								getUserData(r.id); 
 								
 							} else {
 								alert("Fejl i oprettelse. Response: " + response);
@@ -132,6 +113,40 @@ fb.addEventListener('login', function(e) {
         alert(e.error);
     }
 });
+
+function getUserData(id) {
+	 // Titanium's way of XHR/AJAX request
+	 var url = "http://drupal.casper-storm.dk/rest/views/users/" + id;
+	 var client = Ti.Network.createHTTPClient({
+	     // function called when the response data is available
+	     onload : function(e) {
+	     	 var ud = JSON.parse(this.responseText);
+	     	 ud = ud[0];
+	         Ti.API.info("Received text: " + ud);
+	         
+	         // Calc age
+	         var bd = moment(ud.birthday);
+			 var age = bd.format('YYYY-MM-DD');
+			 var ye = moment().diff(age, 'years');
+			 ye = ye + ' år';
+			 
+	         var userdata = {"uid":ud.uid, "age": ye, "fbid": ud.name, "name": ud.realname, "birthday": ud.birthday, "picture": ud.picture, "email": ud.email, "kategori": ud.kategori, "location": ud.location};
+	         //alert(userdata);
+	         Alloy.Globals.User = userdata;
+	         toOpdag();
+	     },
+	     // function called when an error occurs, including a timeout
+	     onerror : function(e) {
+	         Ti.API.debug(e.error);
+	         alert('error' + e.error);
+	     },
+	     timeout : 5000  // in milliseconds
+	 });
+	 // Prepare the connection.
+	 client.open("GET", url);
+	 // Send the request.
+	 client.send();
+}
 
 fb.addEventListener('logout', function(e) {
     alert('Logged out');

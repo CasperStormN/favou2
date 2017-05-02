@@ -8,6 +8,7 @@ exports.definition = {
 		},
 		headers: {
 			Accept: "application/json",
+			"Authorization": "Basic YWRtaW46cGFzc3dvcmQ="
 		}
 	},
 	extendModel: function(Model) {

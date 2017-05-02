@@ -9,12 +9,12 @@
 			<View class="profile" layout="horizontal">
 				<View class="spacer-view"></View>
 				<View class="profile-img">
-					<ImageView image="/images/profile_pic1.png" width="145dp" height="145dp" id="profile_picture"></ImageView>
+					<ImageView image="Alloy.Globals.User.picture" width="145dp" height="145dp" id="profile_picture"></ImageView>
 				</View>
 				<View class="profile-info" layout="vertical">
-					<Label class="profile-text">Karl Holger</Label>
-					<Label class="profile-text">28 år</Label>
-					<Label class="profile-text">Odense C</Label>
+					<Label class="profile-text" text="Alloy.Globals.User.name"></Label>
+					<Label class="profile-text" text="Alloy.Globals.User.age"></Label>
+					<Label class="profile-text" text="Alloy.Globals.User.location"></Label>
 				</View>
 			</View>
 			<View class="pagetitleview">

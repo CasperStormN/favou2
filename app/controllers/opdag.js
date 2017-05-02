@@ -12,7 +12,8 @@ function transform(model) {
 		"id" : nodeObject.nid,
 		"cid" : model.cid,
 		"dato": nodeObject.dato,
-		"author": nodeObject.author,
+		"author": nodeObject.author_realname,
+		"author_image": nodeObject.author_image
 	};
 	
 	var dato = moment(output.dato);

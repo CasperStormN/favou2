@@ -30,7 +30,7 @@
 					<TableViewRow  modelId="{cid}">
 						<View top="-2" class="tilmeldt_opg" onClick="toOpgavedetaljer">
 							<View class="profile_image">
-								<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
+								<ImageView image="{author_image}" class="profile_picture"></ImageView>
 							</View>
 							<View class="name_description">
 								<Label class="name">{author}</Label>

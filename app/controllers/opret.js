@@ -2,7 +2,8 @@
 //this is how we accept arguments passed to the controller (usually from another controller)
 var args = arguments[0] || {};
 
-alert(Alloy.Globals.user);
+
+
 
 function report(e) {
     Ti.API.info('User selected: ' + e.value);
@@ -106,14 +107,16 @@ $.createNode.addEventListener("click", function() {
 	  ],
 	  "uid": [
 	    {
-	      "target_id": "1"
+	      "target_id": Alloy.Globals.User.uid
 	    }
 	  ],
 	  "field_person_behov": [
 	    {
 	      "value": $.postPerson.value
 	    }
-	  ]  		
+	  ],
+	  "field_user_image": Alloy.Globals.User.picture,
+	  "field_user_realname": Alloy.Globals.User.name
 	};
 	
 	newNode.save(params, {
