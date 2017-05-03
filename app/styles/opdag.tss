@@ -71,7 +71,7 @@
 	backgroundColor: "#59d3ca"
 }
 
-'.canvas': {
+'#canvas': {
 
 	// Use vertical layout so the Map comes below the SearchBar, no matter its height
 	layout: 'vertical',

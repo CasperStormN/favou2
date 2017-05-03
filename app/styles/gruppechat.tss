@@ -1,14 +1,20 @@
 
 "#scrollChat" : {
-	backgroundColor:"red",
 	height: "73%",
 	width: Titanium.UI.FILL,
 	scrollingEnabled: true,
 	scrollType: "vertical"
 }
+
 "#listChat" : {
-	backgroundColor:"green",
+
 }
+
+"ListSection": {
+	backgroundColor:"black",
+	color: "red"
+}
+
 "#chatInterface" : {
 	height: "40dp",
 	width: Titanium.UI.FILL,
@@ -22,6 +28,6 @@
 	width: "30%",
 	height: "32dp",
 	borderRadius: "5dp",
-	backgroundColor: "#49ccca",
+	backgroundColor: "#59d3ca",
 	color: "white"
 }

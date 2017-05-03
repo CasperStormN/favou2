@@ -6,8 +6,7 @@
 					<Label class="lobster pagetitle">Tilmeldte opgaver</Label>
 				</View>
 				<TableView> 
-					<TableViewRow height="80dp">
-						<View>
+					<TableViewRow height="80dp" onClick="ladida">
 							<View class="tilmeldt_opg">
 								<View class="profile_image">
 									<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
@@ -21,11 +20,7 @@
 									<Label top="15" right="10">d.12.07.17</Label>
 								</View>
 							</View>
-							
-							<View width="30%" right="0" backgroundColor="#f00" id="deletebtn" class="hidden">
-								<Button backgroundColor="#f00">DELETE</Button>
-							</View>
-						</View>
+							<Button id="deletebtn">DELETE</Button>
 					</TableViewRow>
 				</TableView>
 

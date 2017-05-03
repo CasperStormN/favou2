@@ -1,7 +1,7 @@
 <Alloy>
 	<Window class="container" layout="vertical" onOpen="showCurrentPosition" id="opdag">
 		<View>
-			<ScrollView layout="vertical">
+			<ScrollView layout="vertical" id="opdagscroll">
 				<!-- Pagetitle -->
 				<View class="pagetitleview">
 					<Label class="lobster pagetitle">Opdag</Label>
@@ -20,7 +20,7 @@
 					</View>
 				</View>
 				<!-- Map -->
-				<View class="canvas">
+				<View id="canvas">
 					<View module="ti.map" id="map" onLongclick="reverseGeocode">
 						<Button class="typeBtn" onClick="changeMapType">Map Type</Button>
 					</View>

@@ -18,7 +18,12 @@ Alloy.Globals.Facebook.authorize();
 Alloy.Collections.instance("Users");
 
 Alloy.Globals.User;
-
+/*
+(function()
+{
+	//throw('hello world');
+})();
+*/
 var OldWin;
 
 var moment = require('alloy/moment');

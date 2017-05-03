@@ -3,6 +3,16 @@ var args = $.args;
 
 Alloy.Collections.instance("Nodes");
 Alloy.Collections.instance("Nodes").fetch();
+/*
+$.opdagscroll.addEventListener('scroll', function(e){
+	$.canvas.setHeight("25%");
+});
+*/
+
+setTimeout(function()
+{
+	//$.opdagscroll.scrollsTo(0, 0);
+}, 300);
 
 function transform(model) {
 	//convert the model to a JSON object
