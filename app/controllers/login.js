@@ -1,5 +1,16 @@
-$.login.open();
+
 var fb = Alloy.Globals.Facebook;
+fb.requestWithGraphPath('me', {fields: 'id'}, 'GET', function(e) {
+	if (e.success) {
+		var r = e.result;
+		r = JSON.parse(r);
+		getUserData(r.id);
+	} else {
+		
+	}
+});
+
+$.login.open();
 fb.addEventListener('login', function(e) {
     if (e.success == true) {
     	// Gets the permissions
@@ -89,7 +100,7 @@ fb.addEventListener('login', function(e) {
 							response = JSON.stringify(response);
 							id = JSON.stringify(e.uid);
 							name = JSON.parse(e.data).name;*/
-							alert('tester');
+							
 							if(response = "User already exists") {
 								
 								getUserData(r.id); 
