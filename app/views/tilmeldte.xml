@@ -1,30 +1,27 @@
 <Alloy>
 	<Window class="container" layout="vertical">
-		<View>
-			<ScrollView layout="vertical">
-				<View class="pagetitleview">
-					<Label class="lobster pagetitle">Tilmeldte opgaver</Label>
-				</View>
-				<TableView> 
-					<TableViewRow height="80dp" onClick="ladida">
-							<View class="tilmeldt_opg">
-								<View class="profile_image">
-									<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
-								</View>
-								<View class="name_description" width="28%" backgroundColor="#fff">
-									<Label class="name">Bo Larsen</Label>
-									<Label left="5" top="10">Flytning</Label>
-								</View>
-								<View class="date" width="50%" backgroundColor="#000">
-									<ImageView image="/images/arrow.png" top="13" right="10"></ImageView>
-									<Label top="15" right="10">d.12.07.17</Label>
-								</View>
-							</View>
-							<Button id="deletebtn">DELETE</Button>
-					</TableViewRow>
-				</TableView>
-
-			</ScrollView>
+		<View layout="vertical">
+			<View class="pagetitleview">
+				<Label class="lobster pagetitle">Tilmeldte opgaver</Label>
+			</View>
+			<TableView> 
+				<TableViewRow height="80dp" onClick="showDelete">
+					<View class="tilmeldt_opg">
+						<View class="profile_image">
+							<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
+						</View>
+						<View class="name_description" width="28%" backgroundColor="#fff">
+							<Label class="name">Bo Larsen</Label>
+							<Label left="5" top="10">Flytning</Label>
+						</View>
+						<View class="date" width="50%" backgroundColor="#000">
+							<ImageView image="/images/arrow.png" top="13" right="10"></ImageView>
+							<Label top="15" right="10">d.12.07.17</Label>
+						</View>
+					</View>
+					<Button id="deletebtn">SLET</Button>
+				</TableViewRow>
+			</TableView>
 			<View id="bottom_nav">
 				<View class="tab" onClick="toOpdag">
 					<ImageView class="tab_img" image="/images/opdag.png" />

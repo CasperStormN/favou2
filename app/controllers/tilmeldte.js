@@ -3,8 +3,7 @@ var args = $.args;
 
 var buttonSwiped = 0;
 
-function ladida() {
-	alert('bob');
+function showDelete() {
 	if(buttonSwiped == 0) {
 		$.deletebtn.animate({
 			right:0,
