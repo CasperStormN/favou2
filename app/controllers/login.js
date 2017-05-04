@@ -11,14 +11,16 @@ fb.addEventListener('login', function(e) {
     	
     	fb.requestNewReadPermissions(['public_profile', 'email', 'user_birthday', 'user_location'], function(e) {
     		if (e.success) {
-				fb.requestWithGraphPath('me', {fields: 'id, name, email, location, picture, birthday'}, 'GET', function(e) {
+				fb.requestWithGraphPath('me', {fields: 'id, name, email, location, picture.type(large), birthday'}, 'GET', function(e) {
 		        if (e.success) {
 		            var r = e.result;
+		            
 		            r = JSON.parse(r);
 		            var loca = r.location.name;
 		            loca = loca.replace(/,[^,]+$/, "");
 		            
 		            var age = moment(r.birthday);
+		            
 					var bd = age.format('YYYY-MM-DD');
 		            
 		            var newUser = Alloy.createModel('PostUser');
@@ -73,12 +75,12 @@ fb.addEventListener('login', function(e) {
 					"field_birthday": r.birthday,
 					"field_email": r.email,
 					"field_location": loca,
-					"field_picture": r.picture.data.url,
-					"field_age": bd
+					"field_picture": r.picture.data.url
 					};
 					
 					newUser.save(params, {
 						success: function(model, response) {
+							
 							getUserData(r.id);
 						},
 						error: function(err, response) {
@@ -87,7 +89,7 @@ fb.addEventListener('login', function(e) {
 							response = JSON.stringify(response);
 							id = JSON.stringify(e.uid);
 							name = JSON.parse(e.data).name;*/
-
+							alert('tester');
 							if(response = "User already exists") {
 								
 								getUserData(r.id); 
