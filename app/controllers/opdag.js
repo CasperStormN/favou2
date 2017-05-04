@@ -23,14 +23,37 @@ function transform(model) {
 		"cid" : model.cid,
 		"dato": nodeObject.dato,
 		"author": nodeObject.author_realname,
-		"author_image": nodeObject.author_image
+		"author_image": nodeObject.author_image,
+		"address": nodeObject.adresse
 	};
 	
 	var dato = moment(output.dato);
 	output.dato = dato.format("DD.MM.YY");
 
-	console.log(output);
+	bob = output.address;
+	
+	
+	Ti.Geolocation.forwardGeocoder(JSON.stringify(bob), function(bob) {
+		var thelat = bob.latitude;
+		var thelong = bob.longitude;
+		addAnnotation(thelat, thelong);
+	});
+	
 	return output;
+}
+
+function addAnnotation(thelat, thelong) {
+  'use strict';
+	
+  // create the annotation
+  var annotation = map.createAnnotation({
+    title: 'Fatte det',
+    latitude: thelat,
+    longitude: thelong,
+    draggable: false
+  });
+
+  $.map.addAnnotations([annotation]);
 }
 
 // DEPENDENCIES
@@ -170,7 +193,7 @@ function setAnnotation(location) {
   });
 
   // replace previous annotation
-  $.map.setAnnotations([annotation, bob]);
+  //$.map.setAnnotations([annotation, bob]);
 }
 
 /**
