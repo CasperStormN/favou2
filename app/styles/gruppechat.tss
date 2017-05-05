@@ -15,6 +15,14 @@
 	color: "red"
 }
 
+"ImageView": {
+	right:"1dp"
+}
+
+"ListItem": {
+	backgroundColor:"red"
+}
+
 "#chatInterface" : {
 	height: "40dp",
 	width: Titanium.UI.FILL,

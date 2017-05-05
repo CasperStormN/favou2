@@ -22,9 +22,19 @@ WS.addEventListener('message', function (ev) {
 	var msg = JSON.stringify(ev);
 	Ti.API.log(msg);
 	var listView = $.listChat;
-	var chatSection = Ti.UI.createListSection({ headerTitle: 'Someone'});
+	var chatSection = Ti.UI.createListSection();
 	var chatDataSet = [
-	    {properties: { title: ev.data}}
+	    {properties: { 
+	    	title: ev.data, 
+	    	backgroundColor: "white", 
+	    	width: Ti.UI.SIZE, 
+	    	height: Ti.UI.SIZE, 
+	    	left:"50dp",
+	    	top:"10dp",
+	    	color: "black", 
+	    	border:"1dp", 
+	    	borderColor:"red", 
+	    	borderRadius:"5dp"}}
 	];
 	chatSection.setItems(chatDataSet);
 	listView.appendSection(chatSection);
@@ -38,9 +48,27 @@ $.chatSend.addEventListener('click', function (ev) {
     WS.send(message);
     $.chatInput.setValue('');
     var listView = $.listChat;
-	var chatSection = Ti.UI.createListSection({ headerTitle: 'You'});
+	var chatSection = Ti.UI.createListSection();
 	var chatDataSet = [
-	    {properties: { title: message}}
+	{properties: { 
+	    	title: '', 
+	    	backgroundImage: "/images/arrow_teal.png", 
+	    	width: "30dp", 
+	    	height: "30dp",
+	    	top:"10dp", 
+	    	right:"0"
+	    	}},
+	    {properties: { 
+	    	title: message, 
+	    	backgroundColor: "white", 
+	    	width: Ti.UI.SIZE, 
+	    	height:Ti.UI.SIZE, 
+	    	right:"50dp",
+	    	
+	    	color: "black", 
+	    	border:"1dp", 
+	    	borderColor:"red", 
+	    	borderRadius:"5dp"}}
 	];
 	
 	chatSection.setItems(chatDataSet);
