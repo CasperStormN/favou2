@@ -3,11 +3,15 @@ var args = $.args;
 
 Alloy.Collections.instance("Nodes");
 Alloy.Collections.instance("Nodes").fetch();
-/*
-$.opdagscroll.addEventListener('scroll', function(e){
-	$.canvas.setHeight("25%");
+
+$.opdagscroll.addEventListener('scroll', function(e, x, y){
+	//alert('e:' + e + 'x:' + x + 'y:' + y);
+	$.canvas.animate({
+		height: "25%",
+		duration:250
+	});
 });
-*/
+
 
 setTimeout(function()
 {

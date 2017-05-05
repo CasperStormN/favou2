@@ -1,7 +1,7 @@
 <Alloy>
 	<Window class="container" layout="vertical" onOpen="showCurrentPosition" id="opdag">
 		<View>
-			<ScrollView layout="vertical" id="opdagscroll">
+			<View layout="vertical">
 				<!-- Pagetitle -->
 				<View class="pagetitleview">
 					<Label class="lobster pagetitle">Opdag</Label>
@@ -26,24 +26,27 @@
 					</View>
 				</View>
 				<!-- The events pulled dynamically from Drupal -->
-				<TableView id="table" top="2" dataCollection="Nodes" dataTransform="transform">
-					<TableViewRow  modelId="{cid}">
-						<View top="-2" class="tilmeldt_opg" onClick="toOpgavedetaljer">
-							<View class="profile_image">
-								<ImageView image="{author_image}" class="profile_picture"></ImageView>
+				<ScrollView id="opdagscroll">
+					<TableView id="table" top="2" class="nodetable" dataCollection="Nodes" dataTransform="transform">
+						<TableViewRow  modelId="{cid}">
+							<View top="-2" class="tilmeldt_opg" onClick="toOpgavedetaljer">
+								<View class="profile_image">
+									<ImageView image="{author_image}" class="profile_picture"></ImageView>
+								</View>
+								<View class="name_description">
+									<Label class="name">{author}</Label>
+									<Label left="5" top="10">{title}</Label>
+								</View>
+								<View class="date">
+									<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
+									<Label right="20" top="10">d. {dato}</Label>
+								</View>
 							</View>
-							<View class="name_description">
-								<Label class="name">{author}</Label>
-								<Label left="5" top="10">{title}</Label>
-							</View>
-							<View class="date">
-								<ImageView image="/images/arrow.png" right="10" top="18"></ImageView>
-								<Label right="20" top="10">d. {dato}</Label>
-							</View>
-						</View>
-					</TableViewRow>
-				</TableView>
-			</ScrollView>
+						</TableViewRow>
+					</TableView>
+				</ScrollView>
+			</View>
+			
 			<!-- Bottom nav buttons-->
 			<View id="bottom_nav">
 				<View class="active tab" onClick="toOpdag">

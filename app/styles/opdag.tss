@@ -29,7 +29,11 @@
 
 ".name_description": {
 	layout: "vertical",
-	width: "39%",
+	width: "50%",
+}
+
+".nodetable": {
+	bottom:"67dp"
 }
 
 ".name": {
@@ -43,7 +47,7 @@
 
 ".date": {
 	layout: "vertical",
-	width: "38%",
+	width: "27%",
 }
 
 
