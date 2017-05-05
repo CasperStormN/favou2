@@ -12,7 +12,6 @@ $.opdagscroll.addEventListener('scroll', function(e, x, y){
 	});
 });
 
-
 setTimeout(function()
 {
 	//$.opdagscroll.scrollsTo(0, 0);

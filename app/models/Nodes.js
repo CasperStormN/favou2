@@ -1,6 +1,6 @@
 exports.definition = {
 	config: {
-		URL: "http://drupal.casper-storm.dk/rest/views/favour",
+		URL: "http://drupal.casper-storm.dk/rest/views/favour/",
 		adapter: {
 			type: "restapi",
 			collection_name: "Nodes",

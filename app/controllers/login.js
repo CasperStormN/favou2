@@ -143,10 +143,16 @@ function getUserData(id) {
 			 var ye = moment().diff(age, 'years');
 			 ye = ye + ' år';
 			 
-	         var userdata = {"uid":ud.uid, "age": ye, "fbid": ud.name, "name": ud.realname, "birthday": ud.birthday, "picture": ud.picture, "email": ud.email, "kategori": ud.kategori, "location": ud.location};
+			 var kr = ud.kategori;
+			 kr = kr.replace(/, /g, "+");
+			 kr = kr.replace(' ', '');
+			 
+			 
+	         var userdata = {"uid":ud.uid, "kategori-readable": kr, "age": ye, "fbid": ud.name, "name": ud.realname, "birthday": ud.birthday, "picture": ud.picture, "email": ud.email, "kategori": ud.kategori, "location": ud.location};
 	         //alert(userdata);
 	         Alloy.Globals.User = userdata;
-	         toOpdag();
+	         Alloy.Globals.kategori = kr;
+	         toOpdag();	         
 	     },
 	     // function called when an error occurs, including a timeout
 	     onerror : function(e) {
