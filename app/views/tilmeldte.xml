@@ -10,11 +10,11 @@
 						<View class="profile_image">
 							<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
 						</View>
-						<View class="name_description" width="28%" backgroundColor="#fff">
+						<View class="name_description" width="28%">
 							<Label class="name">Bo Larsen</Label>
 							<Label left="5" top="10">Flytning</Label>
 						</View>
-						<View class="date" width="50%" backgroundColor="#000">
+						<View class="date" width="50%">
 							<ImageView image="/images/arrow.png" top="13" right="10"></ImageView>
 							<Label top="15" right="10">d.12.07.17</Label>
 						</View>

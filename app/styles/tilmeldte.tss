@@ -43,5 +43,5 @@
 	width:"30%",
 	height:"100%",
 	right:"-30%",
-	backgroundColor:"red"
+	backgroundColor:"#b83131"
 }

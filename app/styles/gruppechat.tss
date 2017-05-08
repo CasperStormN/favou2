@@ -10,17 +10,14 @@
 
 }
 
-"ListSection": {
-	backgroundColor:"black",
-	color: "red"
-}
-
-"ImageView": {
-	right:"1dp"
-}
-
 "ListItem": {
-	backgroundColor:"red"
+	font: {
+		fontSize: "50dp"
+	}
+}
+
+"ListView": {
+	separatorColor: "#192935"
 }
 
 "#chatInterface" : {

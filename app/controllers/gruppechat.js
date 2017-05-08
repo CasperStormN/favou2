@@ -30,10 +30,10 @@ WS.addEventListener('message', function (ev) {
 	    	width: Ti.UI.SIZE, 
 	    	height: Ti.UI.SIZE, 
 	    	left:"50dp",
-	    	top:"10dp",
+	    	top:"20dp",
 	    	color: "black", 
 	    	border:"1dp", 
-	    	borderColor:"red", 
+	    	borderColor:"grey", 
 	    	borderRadius:"5dp"}}
 	];
 	chatSection.setItems(chatDataSet);
@@ -50,25 +50,19 @@ $.chatSend.addEventListener('click', function (ev) {
     var listView = $.listChat;
 	var chatSection = Ti.UI.createListSection();
 	var chatDataSet = [
-	{properties: { 
-	    	title: '', 
-	    	backgroundImage: "/images/arrow_teal.png", 
-	    	width: "30dp", 
-	    	height: "30dp",
-	    	top:"10dp", 
-	    	right:"0"
-	    	}},
-	    {properties: { 
+	    {
+	    	properties: { 
 	    	title: message, 
 	    	backgroundColor: "white", 
 	    	width: Ti.UI.SIZE, 
 	    	height:Ti.UI.SIZE, 
 	    	right:"50dp",
-	    	
+	    	top:"20dp",
 	    	color: "black", 
 	    	border:"1dp", 
-	    	borderColor:"red", 
-	    	borderRadius:"5dp"}}
+	    	borderColor:"grey", 
+	    	borderRadius:"5dp"}
+	    }
 	];
 	
 	chatSection.setItems(chatDataSet);
