@@ -45,6 +45,28 @@ function transform(model) {
 	return output;
 }
 
+$.table.addEventListener('click', function(_event) {
+	//get the correct approach
+	//
+	// The properties synch adapter that is provided by appcelerator does not set the model.id so get
+	// will never work. See the appcelerator documentation on Backbone Sync Adapters
+	var model = Alloy.Collections.Nodes.getByCid(_event.rowData.modelId);
+	
+	Alloy.Globals.test = _event.rowData.nodeId;
+	
+	//create the controller and pass the model to it
+	var detailController = Alloy.createController("opgavedetaljer", {
+		data : model
+	}).getView();
+	
+	
+	
+	//get view returns to root view when no view ID is provided
+	detailController.open();
+
+});
+
+
 function addAnnotation(thelat, thelong) {
   'use strict';
 	

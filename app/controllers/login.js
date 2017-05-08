@@ -13,13 +13,6 @@ fb.requestWithGraphPath('me', {fields: 'id'}, 'GET', function(e) {
 $.login.open();
 fb.addEventListener('login', function(e) {
     if (e.success == true) {
-    	// Gets the permissions
-    	/*var permis = fb.getPermissions();
-    	permis = JSON.stringify(permis);
-    	if(permis = ["user_birthday","public_profile","email","user_location"]) {
-    	} else {
-    	}*/
-    	
     	fb.requestNewReadPermissions(['public_profile', 'email', 'user_birthday', 'user_location'], function(e) {
     		if (e.success) {
 				fb.requestWithGraphPath('me', {fields: 'id, name, email, location, picture.type(large), birthday'}, 'GET', function(e) {

@@ -1,46 +1,40 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Model src="Nodes" instance="true" id="Nodes" />
+	<Window class="container" layout="vertical" model="$.Nodes" >	
 		<View>
 			<ScrollView layout="vertical">
 				<View class="pagetitleview">
 					<Label class="lobster pagetitle">Opgavedetaljer</Label>
 				</View>
-				<Label class="opgavetitel">Hjælp til flytning søges</Label>
-				<Label class="opgavedato">14/02 2017</Label>
-				<ImageView id="profile_picture" image="/images/profile_pic1.png" />
-				<Label class="user_name">Jens Larsen</Label>
+				<Label class="opgavetitel">{$.Nodes.title}</Label>
+				<Label class="opgavedato">{$.Nodes.dato}</Label>
+				<ImageView id="profile_picture" image="{$.Nodes.author_image}" />
+				<Label class="user_name">{$.Nodes.author_realname}</Label>
 				<Button id="gruppechat_btn" onClick="toGruppechat">Gruppechat</Button>
 				<View class="details">
 
 					<View class="opgave_detaljer">
 						<Label class="detalje_h2">Kategori:</Label>
-						<Label>Flytning</Label>
+						<Label>{$.Nodes.kategori}</Label>
 					</View>
 					<View class="opgave_detaljer">
 						<Label class="detalje_h2">Adresse:</Label>
-						<Label>Klokkestøbervej 3, 5000 Odense</Label>
+						<Label>{$.Nodes.adresse}</Label>
 					</View>
 					<View class="opgave_detaljer">
 						<Label class="detalje_h2">Antal personer:</Label>
-						<Label>3</Label>
+						<Label>{$.Nodes.person}</Label>
 					</View>
 					<View class="opgave_detaljer">
 						<Label class="detalje_h2">Beskrivelse:</Label>
 					</View>
 					<View class="opgave_beskrivelse">
-						<Label>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce neque eros, volutpat quis ultricies vel, pulvinar a arcu. Morbi lacinia laoreet nisi et porta. Duis vestibulum blandit ligula. Morbi molestie purus sed mauris bibendum, ut rutrum nisl hendrerit. Nam non efficitur eros. Morbi tristique ante vel ornare accumsan.Hej med dig</Label>
+						<Label>{$.Nodes.beskrivelse}</Label>
 					</View>
 
 				</View>
 				<Label class="lobster h2">Deltagere</Label>
-				<View class="deltagere">
-					<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
-					<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
-					<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
-					<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
-					<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
-					<ImageView id="deltager_pic" image="/images/profile_pic1.png" />
-
+				<View id="deltagerene" class="deltagere">
 				</View>
 				
 				

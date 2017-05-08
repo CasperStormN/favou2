@@ -17,6 +17,8 @@ Alloy.Globals.Facebook.authorize();
 
 Alloy.Collections.instance("Users");
 
+Alloy.Globals.test;
+
 Alloy.Globals.kategori = 'Musik+Dyr+Madlavning+Kunst+Håndarbejde+Havearbejde+Mekanik+Sport+Underholdning+Socialtarbejde+Natur+Mode';
 
 Alloy.Globals.User;

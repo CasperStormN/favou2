@@ -28,8 +28,8 @@
 				<!-- The events pulled dynamically from Drupal -->
 				<ScrollView id="opdagscroll">
 					<TableView id="table" top="2" class="nodetable" dataCollection="Nodes" dataTransform="transform">
-						<TableViewRow  modelId="{cid}">
-							<View top="-2" class="tilmeldt_opg" onClick="toOpgavedetaljer">
+						<TableViewRow  modelId="{cid}" nodeId={id}>
+							<View top="-2" class="tilmeldt_opg">
 								<View class="profile_image">
 									<ImageView image="{author_image}" class="profile_picture"></ImageView>
 								</View>
