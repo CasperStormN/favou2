@@ -5,19 +5,19 @@
 				<View class="pagetitleview">
 					<Label class="lobster pagetitle">Tilmeldte opgaver</Label>
 				</View>
-				<TableView> 
-					<TableViewRow height="80dp" onClick="showDelete">
+				<TableView id="table" dataCollection="NodesTilmeldte" dataTransform="transform"> 
+					<TableViewRow height="80dp" onClick="showDelete" modelId="{cid}">
 						<View class="tilmeldt_opg">
 							<View class="profile_image">
-								<ImageView image="/images/profile_pic1.png" class="profile_picture"></ImageView>
+								<ImageView image="{author_image}" class="profile_picture"></ImageView>
 							</View>
 							<View class="name_description" width="28%">
-								<Label class="name">Bo Larsen</Label>
-								<Label left="5" top="10">Flytning</Label>
+								<Label class="name">{author}</Label>
+								<Label left="5" top="10">{title}</Label>
 							</View>
 							<View class="date" width="50%">
 								<ImageView image="/images/arrow.png" top="13" right="10"></ImageView>
-								<Label top="15" right="10">d.12.07.17</Label>
+								<Label top="15" right="10">d.{dato}</Label>
 							</View>
 						</View>
 						<Button id="deletebtn">SLET</Button>
