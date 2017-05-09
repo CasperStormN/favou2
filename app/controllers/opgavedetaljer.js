@@ -7,6 +7,10 @@ var args = arguments[0] || {};
 
 $.Nodes.set(args.data);
 
+var  dato = moment($.dato.text);
+dato = dato.format("DD.MM.YY");
+$.dato.text = dato;
+
 var tilmeldte;
 
 var url = "http://drupal.casper-storm.dk/rest/views/favours/" + Alloy.Globals.test;

@@ -7,7 +7,7 @@
 					<Label class="lobster pagetitle">Opgavedetaljer</Label>
 				</View>
 				<Label class="opgavetitel">{$.Nodes.title}</Label>
-				<Label class="opgavedato">{$.Nodes.dato}</Label>
+				<Label id="dato" class="opgavedato">{$.Nodes.dato}</Label>
 				<ImageView id="profile_picture" image="{$.Nodes.author_image}" />
 				<Label class="user_name">{$.Nodes.author_realname}</Label>
 				<Button id="gruppechat_btn" onClick="toGruppechat">Gruppechat</Button>
