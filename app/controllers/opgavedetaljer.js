@@ -35,18 +35,20 @@ var client = Ti.Network.createHTTPClient({
 
 function getImages(t) {
 	var tilmeldte = t.split(",");
+	
 	var til = JSON.stringify(tilmeldte);
 	var arrayLength = tilmeldte.length;
 	//alert(til + arrayLength);
 	for (var i = 0; i < arrayLength; i++) {
-		alert(tilmeldte[i]);
-		/*var url = "http://drupal.casper-storm.dk/rest/views/users/" + tilmeldte[i];
+		tilmeldte[i] = tilmeldte[i].replace(/ /g,'');
+		//alert(tilmeldte[i]);
+		var url = "http://drupal.casper-storm.dk/rest/views/users/" + tilmeldte[i];
 		var client = Ti.Network.createHTTPClient({
 		    // function called when the response data is available
 			onload : function(e) {
 				var response = JSON.parse(this.responseText);
 				response = response[0];
-				alert(response.picture);
+				//alert(response.picture);
 				var image = Ti.UI.createImageView({
 				  	left: "15dp",
 					bottom: "10dp",
@@ -55,7 +57,7 @@ function getImages(t) {
 				    borderRadius: "40",
 				    image: response.picture
 				});
-				//$.deltagerene.add(image);
+				$.deltagerene.add(image);
 				//$.deltager_pic.setImage(response.picture);
 			},
 			// function called when an error occurs, including a timeout
@@ -70,7 +72,7 @@ function getImages(t) {
 		 client.open("GET", url);
 		 
 		 // Send the request.
-		 client.send();*/
+		 client.send();
 	}
 	
 
