@@ -33,10 +33,9 @@
 					</View>
 
 				</View>
-				<Label class="lobster h2">Deltagere</Label>
-				<View id="deltagerene" class="deltagere">
+					<Label class="lobster h2">Deltagere</Label>
+					<View id="deltagerene" class="deltagere">
 				</View>
-				
 				
 				<Button id="subscribe_btn" onClick="toGruppechat">Tilmeld</Button>
 				

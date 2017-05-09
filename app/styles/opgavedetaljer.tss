@@ -52,7 +52,7 @@
 	layout: "vertical", 
 	width: "90%",
 	left: "20dp",
-	height: "200dp",
+	height: Ti.UI.SIZE,
 	bottom: "15dp",
 }
 
@@ -68,28 +68,21 @@
 
 ".opgave_beskrivelse": {
 	layout: "horizontal",
-	height: "700dp",
+	height: Ti.UI.SIZE,
 }
 
 
 ".deltagere" : {
 	layout: "horizontal",
-	left: "30dp",
-	height: "300dp",
-} 
-
-"#deltager_pic" : {
-	left: "15dp",
-	bottom: "10dp",
-	width: "80",
-    height: "80",
-    borderRadius: "40",
+	width: "90%",
+	height: Titanium.UI.SIZE,
+	bottom:"30dp"
 } 
 
 "#subscribe_btn" : {
 	backgroundColor: "#59D3CA",
 	width: "150dp",
 	height: "40dp",
-	bottom: "12dp",
+	bottom: "100dp",
 	borderRadius: "10", 
 }
