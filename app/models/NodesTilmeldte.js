@@ -1,6 +1,6 @@
 exports.definition = {
 	config: {
-		URL: "http://drupal.casper-storm.dk/rest/views/favours-tilmeldte/" + 39,
+		URL: "http://drupal.casper-storm.dk/rest/views/favours-tilmeldte/" + Alloy.Globals.User.uid,
 		adapter: {
 			type: "restapi",
 			collection_name: "NodesTilmeldte",
