@@ -5,8 +5,6 @@ var args = arguments[0] || {};
 //we do this here to trigger the events
 //that will cause the data to be rendered
 
-alert(args.data);
-
 $.Nodes.set(args.data);
 
 var  dato = moment($.dato.text);
