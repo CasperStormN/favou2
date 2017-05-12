@@ -1,8 +1,8 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-Alloy.Collections.instance("Nodes");
-Alloy.Collections.instance("Nodes").fetch();
+var nodes = Alloy.Collections.instance("Nodes");
+nodes.fetch();
 
 $.opdagscroll.addEventListener('scroll', function(e, x, y){
 	//alert('e:' + e + 'x:' + x + 'y:' + y);
@@ -51,8 +51,8 @@ $.table.addEventListener('click', function(_event) {
 	// The properties synch adapter that is provided by appcelerator does not set the model.id so get
 	// will never work. See the appcelerator documentation on Backbone Sync Adapters
 	var model = Alloy.Collections.Nodes.getByCid(_event.rowData.modelId);
-	
-	Alloy.Globals.test = _event.rowData.nodeId;
+		
+	Alloy.Globals.id = _event.rowData.nodeId;
 	
 	//create the controller and pass the model to it
 	var detailController = Alloy.createController("opgavedetaljer", {

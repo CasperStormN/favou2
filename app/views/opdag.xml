@@ -34,7 +34,7 @@
 									<ImageView image="{author_image}" class="profile_picture"></ImageView>
 								</View>
 								<View class="name_description">
-									<Label class="name">{author}</Label>
+									<Label class="name">{author}, {cid}, {id}</Label>
 									<Label left="5" top="10">{title}</Label>
 								</View>
 								<View class="date">

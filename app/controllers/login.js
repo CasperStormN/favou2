@@ -18,7 +18,6 @@ fb.addEventListener('login', function(e) {
 				fb.requestWithGraphPath('me', {fields: 'id, name, email, location, picture.type(large), birthday'}, 'GET', function(e) {
 		        if (e.success) {
 		            var r = e.result;
-		            
 		            r = JSON.parse(r);
 		            var loca = r.location.name;
 		            loca = loca.replace(/,[^,]+$/, "");
@@ -144,13 +143,18 @@ function getUserData(id) {
 	         //alert(userdata);
 	         Alloy.Globals.User = userdata;
 	         Alloy.Globals.kategori = kr;
-	         Alloy.Collections.instance("Nodes");
-			Alloy.Collections.instance("Nodes").fetch();
-			Alloy.Collections.instance("Users");
-			Alloy.Collections.instance("Users").fetch();
+
 			Alloy.Collections.instance("NodesTilmeldte");
 			Alloy.Collections.instance("NodesTilmeldte").fetch();
-	         toOpdag();	         
+			Alloy.Collections.instance("Users");
+			Alloy.Collections.instance("Users").fetch();
+			 Alloy.Collections.instance("Nodes");
+			Alloy.Collections.instance("Nodes").fetch({
+				success: function() {
+					toOpdag();
+				}
+			});
+	                  
 	     },
 	     // function called when an error occurs, including a timeout
 	     onerror : function(e) {

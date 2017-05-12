@@ -19,7 +19,7 @@ function transform(model) {
 	
 	var dato = moment(output.dato);
 	output.dato = dato.format("DD.MM.YY");
-	
+		
 	return output;
 }
 
@@ -41,6 +41,57 @@ function showDelete() {
 	}
 }
 
+
+
+
+$.table.addEventListener('click', function(_event) {
+	//get the correct approach
+	//
+	// The properties synch adapter that is provided by appcelerator does not set the model.id so get
+	// will never work. See the appcelerator documentation on Backbone Sync Adapters
+	var model = Alloy.Collections.Nodes.getByCid(_event.rowData.modelId);
+	
+	Alloy.Globals.id = _event.rowData.nodeId;
+
+	var url = "http://drupal.casper-storm.dk/node/" + Alloy.Globals.id + "?_format=json";
+	var client = Ti.Network.createHTTPClient({
+	    // function called when the response data is available
+		onload : function(e) {
+			var response = JSON.parse(this.responseText);
+			response = {"title": response.title[0].value, 
+			"dato": response.field_dato[0].value, 
+			"kategori": response.field_kategori[0].value, 
+			"adresse": response.field_adresse[0].value,
+			"person": response.field_person_behov[0].value,
+			"beskrivelse": response.field_beskrivelse_af_opgave[0].value,
+			"author_realname": response.field_user_realname[0].value,
+			"author_image": response.field_user_image[0].value };
+			//alert(response);
+			
+			//create the controller and pass the model to it
+			var detailController = Alloy.createController("opgavedetaljer", {
+				data : response
+			}).getView();
+			
+			//get view returns to root view when no view ID is provided
+			detailController.open();
+		},
+		// function called when an error occurs, including a timeout
+		onerror : function(e) {
+			Ti.API.debug(e.error);
+			alert('error' + e.error);
+		},
+		timeout : 5000  // in milliseconds
+	 });
+	 
+	  // Prepare the connection.
+	 client.open("GET", url);
+	 
+	 // Send the request.
+	 client.send();
+	
+
+});
 
 
 /*

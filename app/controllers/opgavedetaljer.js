@@ -5,6 +5,8 @@ var args = arguments[0] || {};
 //we do this here to trigger the events
 //that will cause the data to be rendered
 
+alert(args.data);
+
 $.Nodes.set(args.data);
 
 var  dato = moment($.dato.text);
@@ -13,7 +15,7 @@ $.dato.text = dato;
 
 var tilmeldte;
 
-var url = "http://drupal.casper-storm.dk/rest/views/favours/" + Alloy.Globals.test;
+var url = "http://drupal.casper-storm.dk/rest/views/favours/" + Alloy.Globals.id;
 var client = Ti.Network.createHTTPClient({
     // function called when the response data is available
 	onload : function(e) {
