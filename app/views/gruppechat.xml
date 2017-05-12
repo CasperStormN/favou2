@@ -1,16 +1,15 @@
 <Alloy>
-	<Window id="chat" class="container" layout="vertical">
-		<View class="pagetitleview">
-			<Label class="lobster pagetitle">Gruppechat</Label>
-		</View>
-		<ScrollView id="scrollChat" layout="vertical">
-			<ListView id="listChat" layout="vertical">
-			
-			</ListView>
-		</ScrollView>			
-		<View id="chatInterface" layout="horizontal">
-			<TextField id="chatInput" hintText="message"></TextField>
-			<Button id="chatSend" title="send"></Button>
-		</View>
-	</Window>
+    <Window class="container" layout="vertical">
+        <View class="pagetitleview">
+					<ImageView image="/images/arrow_teal.png" class="back_btn" onClick="toTilmeldte"></ImageView>
+					<Label class="lobster pagetitle">Gruppechat</Label>
+				</View>
+        <ScrollView id="scrollChat" layout="vertical">
+           
+        </ScrollView>          
+        <View id="chatInterface" layout="horizontal">
+            <TextField id="chatInput" hintText="message"></TextField>
+            <Button id="chatSend" title="send"></Button>
+        </View>
+    </Window>
 </Alloy>

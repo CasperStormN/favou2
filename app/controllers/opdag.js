@@ -33,23 +33,19 @@ function transform(model) {
 	var dato = moment(output.dato);
 	output.dato = dato.format("DD.MM.YY");
 
-	bob = output.address;
+	var address = output.address;
+	var title = output.title;
 	
-	
-	Ti.Geolocation.forwardGeocoder(JSON.stringify(bob), function(bob) {
-		var thelat = bob.latitude;
-		var thelong = bob.longitude;
-		addAnnotation(thelat, thelong);
+	Ti.Geolocation.forwardGeocoder(JSON.stringify(address), function(address) {
+		var thelat = address.latitude;
+		var thelong = address.longitude;
+		addAnnotation(thelat, thelong, title, address);
 	});
 	
 	return output;
 }
 
 $.table.addEventListener('click', function(_event) {
-	//get the correct approach
-	//
-	// The properties synch adapter that is provided by appcelerator does not set the model.id so get
-	// will never work. See the appcelerator documentation on Backbone Sync Adapters
 	var model = Alloy.Collections.Nodes.getByCid(_event.rowData.modelId);
 		
 	Alloy.Globals.id = _event.rowData.nodeId;
@@ -64,12 +60,11 @@ $.table.addEventListener('click', function(_event) {
 });
 
 
-function addAnnotation(thelat, thelong) {
+function addAnnotation(thelat, thelong, title, address) {
   'use strict';
 	
-  // create the annotation
   var annotation = map.createAnnotation({
-    title: 'Fatte det',
+    title: title,
     latitude: thelat,
     longitude: thelong,
     draggable: false
@@ -77,8 +72,6 @@ function addAnnotation(thelat, thelong) {
 
   $.map.addAnnotations([annotation]);
 }
-
-// DEPENDENCIES
 
 var map = require('ti.map');
 var permissions = require('permissions');
@@ -98,14 +91,7 @@ if (OS_ANDROID) {
  * @param  {Object} args arguments passed to the controller
  */
 (function(args) {
-
-  // Use strict mode for this function scope. We can't do this for all of the
-  // controller because after Alloy has compiled all of this file is wrapped.
-  // FIXME: https://jira.appcelerator.org/browse/ALOY-1263
   'use strict';
-
-  // Open the window. We didn't give it an id in the view, but it defaults to
-  // the name of the controller/view.
   $.opdag.open();
 
 })(arguments[0] || {});
@@ -184,86 +170,7 @@ function reverseGeocode(coords, center) {
   });
 }
 
-/**
- * Adds the location to the collection, triggering data-binding to update the map.
- * @param  {Object}  location            Data for the model:
- * @param  {Float}   location.latitude   Latitude
- * @param  {Float}   location.longitude  Longitude
- * @param  {string}  location.title      Title
- */
-function setAnnotation(location) {
-  'use strict';
-	
-	var lat = 55.4038;
-	var lon = 10.4024;
-	
-  // create the annotation
-  var annotation = map.createAnnotation({
-    title: location.title,
-    subtitle: location.latitude + ', ' + location.longitude,
-    latitude: location.latitude,
-    longitude: location.longitude,
-    draggable: false
-  });
-  
-  var bob = map.createAnnotation({
-  	title: 'Awesome location',
-    subtitle: lat + ', ' + lon,
-    latitude: lat,
-    longitude: lon,
-    draggable: false
-  });
 
-  // replace previous annotation
-  //$.map.setAnnotations([annotation, bob]);
-}
-
-/**
- * Callback bound to the SearchView and SearchBar in the view. Forward geocodes an address
- * and uses addLocation() to add it to the collection, triggering data-binding for the UI.
- * @param  {Object} event Event
- */
-function geocodeLocation(e) {
-  'use strict';
-
-  // Reference to the SearchView or SearchBar
-  var source = e.source;
-
-  // On iOS we have e.value, but on Android we don't. This always works.
-  var address = source.value;
-
-  // Forward geocode the address
-  Ti.Geolocation.forwardGeocoder(address, function(e) {
-
-    if (!e.success || e.error) {
-      return alert(e.error || 'Could not geocode the location.');
-    }
-
-    if (OS_ANDROID) {
-
-      // Collapse the ActionView, which also clears the value and hides the keyboard
-      $.searchMenu.collapseActionView();
-
-    } else {
-
-      // Clear the value
-      source.value = '';
-
-      // Hide keyboard
-      source.blur();
-    }
-
-    // Let addLocation() add it to the collection and update the UI
-    setAnnotation({
-      title: address,
-      latitude: e.latitude,
-      longitude: e.longitude
-    });
-
-    // Center the map on the location
-    centerMap(e);
-  });
-}
 
 /**
  * Callback bound to the button overlay to switch map types.

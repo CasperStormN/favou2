@@ -1,38 +1,33 @@
+".container": {
+    backgroundColor : "#192935"
+}
+
+".back_btn": {
+	width:"12dp",
+	height:"20dp",
+	left:"20dp"
+}
 
 "#scrollChat" : {
-	height: "73%",
-	width: Titanium.UI.FILL,
-	scrollingEnabled: true,
-	scrollType: "vertical"
-}
-
-"#listChat" : {
-
-}
-
-"ListItem": {
-	font: {
-		fontSize: "50dp"
-	}
-}
-
-"ListView": {
-	separatorColor: "#192935"
+    height: "73%",
+    width: Titanium.UI.FILL,
+    scrollingEnabled: true,
+    scrollType: "vertical"
 }
 
 "#chatInterface" : {
-	height: "40dp",
-	width: Titanium.UI.FILL,
-	left: 0,
-	bottom: 0
+    height: "40dp",
+    width: Titanium.UI.FILL,
+    left: 0,
+    bottom: 0
 }
 "#chatInput" : {
-	width: "70%",
+    width: "70%",
 }
 "#chatSend" : {
-	width: "30%",
-	height: "32dp",
-	borderRadius: "5dp",
-	backgroundColor: "#59d3ca",
-	color: "white"
+    width: "30%",
+    height: "32dp",
+    borderRadius: "5dp",
+    backgroundColor: "#59d3ca",
+    color: "white"
 }
