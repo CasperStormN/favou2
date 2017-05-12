@@ -74,7 +74,7 @@
 
 ".deltagere" : {
 	layout: "horizontal",
-	width: "90%",
+	width: "80%",
 	height: Titanium.UI.SIZE,
 	bottom:"30dp"
 } 

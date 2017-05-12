@@ -54,7 +54,7 @@ function getImages(t) {
 				response = response[0];
 				//alert(response.picture);
 				var image = Ti.UI.createImageView({
-				  	left: "15dp",
+				  	left: "20dp",
 					bottom: "10dp",
 					width: "80",
 				    height: "80",
