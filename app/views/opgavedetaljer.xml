@@ -37,7 +37,7 @@
 					<View id="deltagerene" class="deltagere">
 				</View>
 				
-				<Button id="subscribe_btn" onClick="toGruppechat">Tilmeld</Button>
+				<Button id="subscribe_btn" onClick="tilmeldOpgave">Tilmeld</Button>
 				
 			</ScrollView>
 			<View id="bottom_nav">
