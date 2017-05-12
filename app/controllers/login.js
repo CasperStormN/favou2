@@ -140,11 +140,16 @@ function getUserData(id) {
 			 kr = kr.replace(/, /g, "+");
 			 kr = kr.replace(' ', '');
 			 
-			 
-	         var userdata = {"uid":ud.uid, "kategori-readable": kr, "age": ye, "fbid": ud.name, "name": ud.realname, "birthday": ud.birthday, "picture": ud.picture, "email": ud.email, "kategori": ud.kategori, "location": ud.location};
+	         var userdata = {"uid":ud.uid, "kat": kr, "age": ye, "fbid": ud.name, "name": ud.realname, "birthday": ud.birthday, "picture": ud.picture, "email": ud.email, "kategori": ud.kategori, "location": ud.location};
 	         //alert(userdata);
 	         Alloy.Globals.User = userdata;
 	         Alloy.Globals.kategori = kr;
+	         Alloy.Collections.instance("Nodes");
+			Alloy.Collections.instance("Nodes").fetch();
+			Alloy.Collections.instance("Users");
+			Alloy.Collections.instance("Users").fetch();
+			Alloy.Collections.instance("NodesTilmeldte");
+			Alloy.Collections.instance("NodesTilmeldte").fetch();
 	         toOpdag();	         
 	     },
 	     // function called when an error occurs, including a timeout

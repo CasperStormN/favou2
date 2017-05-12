@@ -59,11 +59,8 @@ $.table.addEventListener('click', function(_event) {
 		data : model
 	}).getView();
 	
-	
-	
 	//get view returns to root view when no view ID is provided
 	detailController.open();
-
 });
 
 
