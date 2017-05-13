@@ -20,7 +20,6 @@ var client = Ti.Network.createHTTPClient({
 	onload : function(e) {
 		var response = JSON.parse(this.responseText);
 		response = response[0];
-		//alert(response);
 		tilmeldte = response.tilmeldte;   
 
 		getImages(tilmeldte);

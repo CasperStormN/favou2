@@ -6,7 +6,6 @@
 
 ".tilmeldt_opg": {
 	height: "80dp",
-	borderColor: "#59d3ca",
 	layout: "horizontal",
 }
 

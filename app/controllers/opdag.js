@@ -17,7 +17,6 @@ $.opdagscroll.addEventListener('scroll', function(e){
 
 $.opdagscroll.addEventListener('swipe', function(e){
 	if(e.direction == 'down' && mapmini == true){
-		mapmini = false;
 		$.canvas.animate({
 			height: "40%",
 			duration:200
