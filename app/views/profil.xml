@@ -24,55 +24,55 @@
 				<View class="spacer-view"></View>
 				<View layout="vertical" class="interests">
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="musik" class="checkbox"></Switch>
+						<Switch id="Musik" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Musik</Label>
 					</View>
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="dyr" class="checkbox"></Switch>
+						<Switch id="Dyr" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Dyr</Label>
 					</View>
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="madlavning" class="checkbox"></Switch>
+						<Switch id="Madlavning" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Madlavning</Label>
 					</View>
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="kunst" class="checkbox"></Switch>
+						<Switch id="Kunst" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Kunst</Label>
 					</View>
 				</View>
 				<View layout="vertical" class="interests">
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="håndarbejde" class="checkbox"></Switch>
+						<Switch id="Håndarbejde" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Håndarbejde</Label>
 					</View>
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="havearbejde" class="checkbox"></Switch>
+						<Switch id="Havearbejde" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Havearbejde</Label>
 					</View>
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="mekanik" class="checkbox"></Switch>
+						<Switch id="Mekanik" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Mekanik</Label>
 					</View>
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="sport" class="checkbox"></Switch>
+						<Switch id="Sport" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Sport</Label>
 					</View>
 				</View>
 				<View layout="vertical" class="interests">
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="underholdning" class="checkbox"></Switch>
+						<Switch id="Underholdning" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Underholdning</Label>
 					</View>
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="socialtarbejde" class="checkbox"></Switch>
+						<Switch id="Socialtarbejde" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Socialt arbejde</Label>
 					</View>
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="natur" class="checkbox"></Switch>
+						<Switch id="Natur" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Natur</Label>
 					</View>
 					<View layout="horizontal" class="interests-fields">
-						<Switch id="mode" class="checkbox"></Switch>
+						<Switch id="Mode" onClick="updateCat" class="checkbox"></Switch>
 						<Label class="interests-labels">Mode</Label>
 					</View>
 				</View>
