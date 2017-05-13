@@ -112,6 +112,8 @@ function tilmeldOpgave() {
 			Alloy.Collections.instance("Nodes").fetch();
 			alert('Du er nu tilmeldt opgaven');
 			getImages(Alloy.Globals.User.fbid);
+			Alloy.Collections.instance("NodesTilmeldte");
+			Alloy.Collections.instance("NodesTilmeldte").fetch();
 		},
 		// function called when an error occurs, including a timeout
 		onerror : function(e) {

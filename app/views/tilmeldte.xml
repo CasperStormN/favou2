@@ -7,7 +7,7 @@
 				</View>
 				<View height="1" backgroundColor="#59d3ca"></View>
 				<TableView separatorColor="#192935" id="table" dataCollection="NodesTilmeldte" dataTransform="transform"> 
-					<TableViewRow height="80dp" onSwipe="showDelete" modelId="{cid}" nodeId={id}>
+					<TableViewRow height="80dp" onSwipe="showDelete" modelId="{cid}" nodeId="{id}">
 						<View class="tilmeldt_opg" top="-2">
 							<View class="profile_image">
 								<ImageView image="{author_image}" class="profile_picture"></ImageView>

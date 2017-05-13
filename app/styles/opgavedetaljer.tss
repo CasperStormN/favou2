@@ -30,7 +30,9 @@
 	width: "150",
     height: "150",
     borderRadius: "75",
-    top: "15dp",
+    top: "15dp",border: "1",
+	borderColor:"#59d3ca",
+	borderWidth:"3dp",
 }
 
 ".user_name" : {

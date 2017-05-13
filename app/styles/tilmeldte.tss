@@ -20,6 +20,8 @@
     height: "60",
     width: "60",
     top: "10",
+    border: "1",
+	borderColor:"#59d3ca"
 }
 
 ".name_description": {

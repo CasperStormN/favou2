@@ -1,15 +1,28 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-var nodes = Alloy.Collections.instance("Nodes");
-nodes.fetch();
+Alloy.Collections.instance("Nodes");
+Alloy.Collections.instance("Nodes").fetch();
 
-$.opdagscroll.addEventListener('scroll', function(e, x, y){
-	//alert('e:' + e + 'x:' + x + 'y:' + y);
+var mapmini = false;
+
+$.opdagscroll.addEventListener('scroll', function(e){
+	mapmini = true;
 	$.canvas.animate({
 		height: "25%",
-		duration:250
+		duration:200
 	});
+	
+});
+
+$.opdagscroll.addEventListener('swipe', function(e){
+	if(e.direction == 'down' && mapmini == true){
+		mapmini = false;
+		$.canvas.animate({
+			height: "40%",
+			duration:200
+		});
+	}
 });
 
 setTimeout(function()

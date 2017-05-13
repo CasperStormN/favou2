@@ -9,7 +9,7 @@
 }
 
 "#scrollChat" : {
-    height: "73%",
+    height: "70%",
     width: Titanium.UI.FILL,
     scrollingEnabled: true,
     scrollType: "vertical"

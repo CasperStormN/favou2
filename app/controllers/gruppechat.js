@@ -25,14 +25,14 @@ var myTemplate = {
             type: 'Ti.UI.ImageView',
             bindId: 'pic',          
             properties: {            
-                width: '50dp', height: '50dp', bottom: "10dp", borderRadius: 100, borderWidth: 1, borderColor: "#59D3CA"
+                width: '50dp', height: '50dp', borderRadius: 100, borderWidth: 1, borderColor: "#59D3CA"
             }
         },
         {                            
             type: 'Ti.UI.View',    
             bindId: 'view',          
             properties: {            
-                backgroundColor: "white", width: Ti.UI.SIZE, height: Ti.UI.SIZE, bottom: "10dp", borderRadius: 8, borderWidth: 1, borderColor: "#aeaeae"
+                backgroundColor: "white", width: Ti.UI.SIZE, height: Ti.UI.SIZE, borderRadius: 8, borderWidth: 1, borderColor: "#aeaeae"
             },
         childTemplates: [
             {                            
@@ -67,6 +67,7 @@ var listView = Ti.UI.createListView({
     defaultItemTemplate: 'template',
     backgroundColor: "#192935",
     separatorColor: "#192935",
+    separatorHeight: "10dp",
     width: "85%"
 });
  
