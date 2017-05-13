@@ -101,6 +101,20 @@ if (OS_ANDROID) {
  * Gets our current position and then continues the same process as when you
  * longpress somewhere on the map, which is reverseGeocode().
  */
+
+function setAnnotation(location) {
+  'use strict';
+  
+  var annotation = map.createAnnotation({
+    latitude: location.latitude,
+    longitude: location.longitude,
+    draggable: false
+  });
+  
+  // replace previous annotation
+  $.map.setAnnotations([annotation]);
+}
+
 function showCurrentPosition() {
   'use strict';
 
