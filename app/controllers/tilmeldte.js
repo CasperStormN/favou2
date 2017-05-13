@@ -41,9 +41,6 @@ function showDelete() {
 	}
 }
 
-
-
-
 $.table.addEventListener('click', function(_event) {
 	//get the correct approach
 	//
@@ -92,41 +89,3 @@ $.table.addEventListener('click', function(_event) {
 	
 
 });
-
-
-/*
-var deletebtn = Titanium.UI.createButton({
-   borderRadius:10,
-   backgroundColor:'red',
-   width:"50dp",
-   height:"100%",
-   right:"-50dp",
-});
-$.johnjohn.add(deletebtn);
-
-
-function showdelete(direction){
-		//deletebtn.setHeight("50%");
-		deletebtn.right = 0;
-		alert(direction);
-}
-
-*/
-/*
-function showDelete(){
-	if (buttonSwiped == 0)
-	{
-		$.deletinator.animate({
-			right: 0,
-			duration: 250,
-		});
-		buttonSwiped++;
-	} else {
-		$.deletinator.animate({
-			right: "-30%",
-			duration: 250,
-		});
-		buttonSwiped--;
-	}
-}
-*/

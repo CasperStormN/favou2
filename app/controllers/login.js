@@ -148,7 +148,7 @@ function getUserData(id) {
 			Alloy.Collections.instance("NodesTilmeldte").fetch();
 			Alloy.Collections.instance("Users");
 			Alloy.Collections.instance("Users").fetch();
-			 Alloy.Collections.instance("Nodes");
+			Alloy.Collections.instance("Nodes");
 			Alloy.Collections.instance("Nodes").fetch({
 				success: function() {
 					toOpdag();

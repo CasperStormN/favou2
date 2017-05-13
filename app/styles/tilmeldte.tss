@@ -24,6 +24,7 @@
 
 ".name_description": {
 	layout: "vertical",
+	width: "50%",
 }
 
 ".name": {
@@ -37,6 +38,7 @@
 
 ".date": {
 	layout: "vertical",
+	width: "27%"
 }
 
 "#deletebtn": {
