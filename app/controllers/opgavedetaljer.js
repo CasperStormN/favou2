@@ -92,8 +92,8 @@ function setImage(img) {
 	var image = Ti.UI.createImageView({
 	  	left: "20dp",
 		bottom: "10dp",
-		width: "80",
-	    height: "80",
+		width: "70dp",
+	    height: "70dp",
 	    borderRadius: "40",
 	    image: img
 	});

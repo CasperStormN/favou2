@@ -15,7 +15,7 @@
 }
 
 ".profile_image": {
-	width: "22%",
+	width: "20%",
 	layout: "vertical",
 }
 
@@ -31,7 +31,7 @@
 
 ".name_description": {
 	layout: "vertical",
-	width: "50%",
+	width: "52%",
 }
 
 ".nodetable": {
